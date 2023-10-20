@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+}
+
+.crsl{
+    min-height: 500px;
+    display: flex;
+}
+
+.crslItem{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.crsl1{
+    transform: translateY(-1200px);
+}
+
+.crsl2{
+    transform: translateY(-1000px);
+}
+
+.crsl3{
+    transform: translateY(-250px);
+}
+
+.about{
+    align-items: center;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.about, .judulAbt, .btnBergabung{
+    margin: 5px;
+}
+
+.cardAbout{
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin: 0px 35px 50px 35px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.testimoni{
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: space-between; /* Menyusun card dengan jarak yang sama */
+}
+
+.judulTesti{
+    text-align: center;
+}
+
+/* .testimoni, .card{
+    margin-bottom: 20px;
+} */
+.cardTesti{
+    padding: 15px;
+    margin: auto;
+    display: flex;
+    height: 500px;
+    flex-wrap: wrap;
+}
+
+.card-img-top{
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Menyesuaikan gambar ke dalam card tanpa merusak aspek rasio */
+}
+
+
+.judulMap{
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* @media only screen and (min-width: 600px) {
+    .crsl{
+        min-height: 500px;
+        display: flex;
+    }
+
+    .crslItem{
+        object-fit: cover;
+        width: 100%;
+        height: 500px;
+    }
+
+    .crsl1{
+        transform: translateY(-1200px);
+    }
+
+    .crsl2{
+        transform: translateY(-1000px);
+    }
+
+    .crsl3{
+        transform: translateY(-250px);
+    }
+
+    .about{
+        align-items: center;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .about, .judulAbt, .btnBergabung{
+        margin: 5px;
+    }
+
+
+    .judulMap{
+        margin-top: 30px;
+        text-align: center;
+    }
+} */
