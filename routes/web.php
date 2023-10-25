@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/bergabung', function () {
+    return view('gabung');
+});
+
+Route::get('/monitor', function () {
+    return view('monitorArmada');
+});
+
 Route::get('/pengingat', function () {
     return view('pengingat');
+});
+
+Route::get('/keuangan', function () {
+    return view('keuangan');
+});
+
+Route::get('/selengkapnya', function () {
+    return view('selengkapnya');
 });

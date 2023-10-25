@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+
+.crsl{
+    min-height: 500px;
+    display: flex;
+}
+
+.crslItem{
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.crsl1{
+    transform: translateY(-450px);
+}
+
+.card{
+    margin: auto;
+    width: 50%;
+    border: none;
+}

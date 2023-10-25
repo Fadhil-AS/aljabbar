@@ -7,21 +7,21 @@
       <div class="collapse navbar-collapse" id="navbarButtonsExample">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#">Beranda</a>
+            <a class="nav-link active text-light" aria-current="page" href="/">Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="#">Bergabung</a>
+            <a class="nav-link active text-light" aria-current="page" href="/bergabung">Bergabung</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Layanan
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Monitor Armada</a></li>
+              <li><a class="dropdown-item" href="/monitor">Monitor Armada</a></li>
               <li><a class="dropdown-item" href="/pengingat">Pengingat Registrasi Armada</a></li>
-              <li><a class="dropdown-item" href="#">Manajemen Keuangan</a></li>
+              <li><a class="dropdown-item" href="/keuangan">Manajemen Keuangan</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Selengkapnya</a></li>
+              <li><a class="dropdown-item" href="/selengkapnya">Selengkapnya</a></li>
             </ul>
           </li>
         </ul>
