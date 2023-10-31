@@ -26,12 +26,12 @@
           </li>
         </ul>
         <div class="d-flex align-items-center">
-          <button type="button" class="btn btn-success px-3 me-2 text-light">
+          <a class="btn btn-success px-3 me-2 text-light" href="/login">
             Login
-          </button>
-          <button type="button" class="btn btn-primary me-3">
+          </a>
+          <a class="btn btn-primary me-3" href="/signup">
             Sign up
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -36,3 +36,29 @@ Route::get('/keuangan', function () {
 Route::get('/selengkapnya', function () {
     return view('selengkapnya');
 });
+
+// login system
+Route::get('/login', function () {
+    return view('loginsys.login');
+});
+
+Route::get('/signup', function () {
+    return view('loginsys.signup');
+});
+
+// admin
+Route::get('/admin', function () {
+    return view('admin.beranda');
+});
+
+Route::get('/admin/armada', function () {
+    return view('admin.armada');
+});
+
+Route::get('/admin/driver', function () {
+    return view('admin.driver');
+});
+
+Route::get('/admin/helper', function () {
+    return view('admin.helper');
+});
