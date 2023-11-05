@@ -33,7 +33,7 @@
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary">Submit</button>
-                            <a href="#" class="btn text-center btn-light">Login</a>
+                            <a href="/login" class="btn text-center btn-light">Login</a>
                         </div>
                     </form>
                 </div>

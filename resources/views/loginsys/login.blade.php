@@ -26,6 +26,7 @@
                     <div class="mb-3 d-grid gap-2">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         {{-- <button type="button" class="btn btn-light">Lupa Sandi</button> --}}
+                        <a href="/signup" class="btn text-center btn-light">Daftar</a>
                     </div>
                 </form>
             </div>
