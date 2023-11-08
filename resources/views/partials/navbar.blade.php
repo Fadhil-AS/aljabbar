@@ -41,7 +41,7 @@
           <a class="btn btn-masuk px-3 me-2" href="/login">
             Masuk
           </a>
-          <a class="btn btn-success me-3" href="/bergabung">
+          <a class="btn me-3 text-light" href="/bergabung" style="background-color: #47a992">
             Gabung
           </a>
         </div>

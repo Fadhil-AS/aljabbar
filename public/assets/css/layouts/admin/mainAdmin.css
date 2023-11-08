@@ -1,3 +1,7 @@
+a{
+    text-decoration: none;
+}
+
 .custom-toggler.navbar-toggler {
     border-color: #47a992;
 }

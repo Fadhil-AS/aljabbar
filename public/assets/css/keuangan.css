@@ -3,22 +3,72 @@
 }
 
 .crsl{
-    min-height: 500px;
+    height: 700px;
     display: flex;
+    flex: wrap;
 }
 
 .crslItem{
-    object-fit: cover;
     width: 100%;
-    height: 500px;
+    height: 600px;
 }
 
 .crsl1{
     transform: translateY(-450px);
+    filter: brightness(55%);
 }
 
-.card{
+.cardGroup{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.card1{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.card2{
+    position: relative;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.cardFitur{
     margin: auto;
-    width: 50%;
-    border: none;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.card-body-left{
+    text-align: left;
+    padding: 10%;
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    padding: 0 0.5rem;
+}
+
+.card-body-right{
+    text-align: right;
+    padding: 10%;
+    position: relative;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    padding: 0 0.5rem;
+}
+
+.card-img-top{
+    height: auto;
+    width: 100%;
+    border-radius: 5px;
 }
