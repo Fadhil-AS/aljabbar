@@ -3,7 +3,7 @@
 }
 
 .crsl{
-    min-height: 500px;
+    min-height: 700px;
     display: flex;
 }
 
@@ -14,23 +14,9 @@
 }
 
 .crsl1{
-    width: 100%;
-    height: 85%;
-    object-fit: cover;
     transform: translateY(-450px);
     filter: brightness(50%);
 }
-
-.cardGroup{
-    position: relative;
-    margin: 0 auto;
-    padding: 0 0.5rem;
-}
-
-.card-title{
-    color: #47a992;
-}
-
 
 .card-body-right{
     text-align: left;
@@ -60,7 +46,7 @@
     text-align: justify;
 }
 
-.card-img-top{
+.card-img{
     height: auto;
     width: 100%;
     border-radius: 5px;

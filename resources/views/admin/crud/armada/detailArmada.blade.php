@@ -58,12 +58,12 @@
                     </div>
                     <div class="card-item mt-3 ms-4">
                         <div class="d-flex">
-                            <h5 class="col-md-2" id="kotaAwalLabel"></h5>
+                            <h5 class="col-md-2">Bandung</h5>
                             <i class="fa-solid fa-repeat col-md-2"></i>
-                            <h5 class="col-md-5" id="kotaTujuanLabel"></h5>
+                            <h5 class="col-md-5">Denpasar</h5>
                             <i class="fa-regular fa-calendar col-md-0"></i>
-                            <h5 class="col-md-1" id="jamBerangkatLabel"></h5>
-                            <h5 class="col-md-2" id="tanggalBerangkatLabel"></h5>
+                            <h5 class="col-md-1">09.00</h5>
+                            <h5 class="col-md-2">12/22/2023</h5>
                         </div>
                         <h5 class="mt-3">30 Penumpang</h5>
                     </div>
@@ -100,7 +100,7 @@
                                         <td>10.00, 02 Nov 2023</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-success dropdown-toggle" style="background-color: #47a992" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Bukti
                                                 </button>
                                             </div>
@@ -113,7 +113,7 @@
                                         <td>10.00, 02 Nov 2023</td>
                                         <td>
                                             <div class="dropdown">
-                                                <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <button class="btn btn-success dropdown-toggle" style="background-color: #47a992" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Bukti
                                                 </button>
                                             </div>

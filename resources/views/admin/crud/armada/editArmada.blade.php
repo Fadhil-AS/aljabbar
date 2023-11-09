@@ -21,11 +21,11 @@
                                 <div class="col-md-4">
                                     <input type="number" name="nomorArmada" id="id_armada" hidden>
                                     <label for="platNomorInput" class="form-label">Plat nomor:</label>
-                                    <input type="text" name="platNomor" id="platNomorInput" class="form-control" required>
+                                    <input type="text" name="platNomor" id="platNomorInput" value="D 7335 VGA" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="noBodyInput" class="form-label">No Body:</label>
-                                    <input type="text" name="noBodyInput" id="noBodyInput" class="form-control" required>
+                                    <input type="text" name="noBodyInput" id="noBodyInput" value="VT001" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="fotoArmadaInput" class="form-label">Foto Armada :</label>
@@ -35,15 +35,15 @@
                             <div class="row pb-3">
                                 <div class="col-md-4">
                                     <label for="kelasInput" class="form-label">Kelas :</label>
-                                    <input type="text" name="kelasInput" id="kelasInput" class="form-control" required>
+                                    <input type="text" name="kelasInput" id="kelasInput" value="Executive" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="kapasitasInput" class="form-label">Kapasitas :</label>
-                                    <input type="number" name="kapasitasInput" id="kapasitasInput" class="form-control" required>
+                                    <input type="number" name="kapasitasInput" id="kapasitasInput" value="32" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="julukanInput" class="form-label">Julukan/AKA :</label>
-                                    <input type="text" name="julukanInput" id="julukanInput" class="form-control" required>
+                                    <input type="text" name="julukanInput" id="julukanInput" value="Red Velvet" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row pb-3">

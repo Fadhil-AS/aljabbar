@@ -32,7 +32,7 @@
                                     <td>Rp5.000.000</td>
                                     <td>
                                         <div class="dropdown">
-                                            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="btn dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #47A992;">
                                             Details
                                             </button>
                                             <ul class="dropdown-menu">
@@ -51,7 +51,7 @@
                                     <td>Rp5.000.000</td>
                                     <td>
                                         <div class="dropdown">
-                                            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="btn dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #47A992;">
                                             Details
                                             </button>
                                             <ul class="dropdown-menu">

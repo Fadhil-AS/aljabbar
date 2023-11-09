@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="mb-3 d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary border-0" style="background-color: #47a992">Masuk</button>
                         {{-- <button type="button" class="btn btn-light">Lupa Sandi</button> --}}
                         <a href="/bergabung" class="btn text-center btn-light">Bergabung</a>
                     </div>

@@ -66,10 +66,6 @@ Route::get('/admin/armada/edit', function () {
     return view('admin.crud.armada.editArmada');
 });
 
-Route::get('/admin/driver', function () {
-    return view('admin.driver');
-});
-
 Route::get('/admin/helper', function () {
     return view('admin.helper');
 });
@@ -87,6 +83,15 @@ Route::get('/admin/keuangan', function () {
     return view('admin.keuangan');
 });
 
-Route::get('/admin/helper/editDriver', function () {
+// crud driver
+Route::get('/admin/driver', function () {
+    return view('admin.driver');
+});
+
+Route::get('/admin/driver/detail', function () {
+    return view('admin.crud.driver.detailDriver');
+});
+
+Route::get('/admin/driver/edit', function () {
     return view('admin.crud.driver.editDriver');
 });

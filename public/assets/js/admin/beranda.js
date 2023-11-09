@@ -6,7 +6,7 @@
  var data = {
    labels: ['Armada On trip', 'Armada Perpal'],
    datasets: [{
-     data: [1,1],
+     data: [4,1],
      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
    }]
  };

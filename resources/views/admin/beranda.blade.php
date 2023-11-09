@@ -9,7 +9,7 @@
         <div class="card border-0 shadow card-bread ">
             <div class="card-body ms-3 mb-3 me-3 mt-3" style="color: #47A992;">
                 <h1>Selamat Pagi</h1>
-                <h4>PO Subur Jaya</h4>
+                <h4>PO Trans Berkah Armada</h4>
             </div>
         </div>
     </div>
@@ -39,47 +39,66 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                            <tr>
                                     <td>1</td>
                                     <td>Red Velvet</td>
                                     <td>Executive</td>
-                                    <td>22-Jul-2024</td>
+                                    <td>22 Juli 2024</td>
                                     <td>Zilong</td>
                                     <td>Heru</td>
                                     <td>Perpal</td>
                                     <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                              Details
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye"></i> Lihat</a></li>
-                                              <li><a class="dropdown-item" href="#"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
-                                              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Hapus</a></li>
-                                            </ul>
-                                        </div>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>Kenzo</td>
                                     <td>Big Top</td>
-                                    <td>22-Sep-2024</td>
+                                    <td>22 September 2024</td>
                                     <td>Yanto</td>
                                     <td>Faris</td>
                                     <td>On Trip</td>
                                     <td>
-                                        <div class="dropdown">
-                                            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                              Details
-                                            </button>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye"></i> Lihat</a></li>
-                                              <li><a class="dropdown-item" href="#"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
-                                              <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Hapus</a></li>
-                                            </ul>
-                                        </div>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Dream</td>
+                                    <td>Big Top</td>
+                                    <td>22 September 2024</td>
+                                    <td>Kunto</td>
+                                    <td>Kuyhaa</td>
+                                    <td>On Trip</td>
+                                    <td>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Rangers</td>
+                                    <td>Big Top</td>
+                                    <td>22 September 2024</td>
+                                    <td>Bagas</td>
+                                    <td>Lorenzo</td>
+                                    <td>On Trip</td>
+                                    <td>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Black Pink</td>
+                                    <td>Big Top</td>
+                                    <td>22 September 2024</td>
+                                    <td>Ronaldo</td>
+                                    <td>Bimo</td>
+                                    <td>On Trip</td>
+                                    <td>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
+                                    </td>
+                                </tr>
                                 </tr>
                             </tbody>
                         </table>

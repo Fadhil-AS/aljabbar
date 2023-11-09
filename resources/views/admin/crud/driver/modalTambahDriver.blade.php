@@ -33,6 +33,10 @@
                                 <input type="date" name="lahir" id="tgl_lahir" class="form-control" required>
                             </div>
                             <div class="col-md-4">
+                                    <label for="armada" class="form-label">Armada:</label>
+                                    <input type="text" name="armada" id="armada" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="armada" class="form-label">Nomor Sim:</label>
                                 <input type="text" name="armada" id="armada" class="form-control" required>
                             </div>

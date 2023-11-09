@@ -1,7 +1,7 @@
 @extends('layouts.admin.mainAdmin')
 
 @section('containAdmin')
-    <p class="card-text ms-3 mt-5"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/helper" class="text-none align-middle text-dark">Helper</a> <span class="text-secondary">/</span> <a href="/admin/detailHelper" class="text-none align-middle text-dark">Detail Helper</a> </p>
+    <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/helper" class="text-none align-middle text-dark">Helper</a> <span class="text-secondary">/</span> <a href="/admin/detailHelper" class="text-none align-middle text-dark">Detail Helper</a> </p>
     <div class="container">
         <div class="card mb-3 border-0 shadow" style="max-width: 100%;">
             <div class="row g-0">
@@ -16,15 +16,15 @@
             </div>
         </div>
     </div>
-    {{-- data Driver --}}
+    {{-- data Helper --}}
     <div class="dt mb-5">
         <div class="container">
             <div class="card border-0 shadow">
                 <div class="card-body ms-3 mb-3 me-3 mt-3">
                     <div class="card-item">
-                        <div class ="profil-driver">
+                        <div class ="profil-Helper">
                             <div>
-                                <h3 class="mb-5">Profil Driver</h3>
+                                <h3 class="mb-5">Profil Helper</h3>
                             </div>
                             <table class="mt-3 mb-5">
                                 <tr>

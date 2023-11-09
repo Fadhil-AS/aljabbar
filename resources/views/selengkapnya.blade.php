@@ -10,9 +10,9 @@
         <div class="carousel-inner ">
           <div class="carousel-item active " >
             <img src="https://images.unsplash.com/photo-1494515843206-f3117d3f51b7?auto=format&fit=crop&q=80&w=2072&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="..." class="img-fluid"   style="filter: brightness(50%);object-fit: cover;width: 100%;height: 95%;">
+            alt="..." class="img-fluid"   style="filter: brightness(50%);object-fit: cover;width: 100%;height: 85%;">
             <div class="carousel-caption d-none d-md-block" >
-              <h5 class="breadcumb"><a href="/" class="text-light">Beranda</a> / Selengkapnya</h5>
+              <h5 class="breadcumb mb-5" ><a href="/" class="text-light">Beranda</a> / Selengkapnya</h5>
               <h3>Segera nikmati kemudahan perjalanan dengan aplikasi ticketing bis kami. Pilih, bayar, dan berangkat, semua dalam genggaman Anda!</h3>
             </div>
           </div>

@@ -20,8 +20,8 @@
                       Details
                     </button>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="/admin/driver/detailDriver"><i class="fa-regular fa-eye"></i> Lihat</a></li>
-                      <li><a class="dropdown-item" href="/admin/helper/editDriver"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
+                      <li><a class="dropdown-item" href="/admin/driver/detail"><i class="fa-regular fa-eye"></i> Lihat</a></li>
+                      <li><a class="dropdown-item" href="/admin/driver/edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
                       <li><a class="dropdown-item" href="#" onclick="hapusDriver()"><i class="fa-solid fa-trash"></i> Hapus</a></li>
                     </ul>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layouts.admin.mainAdmin')
 
 @section('containAdmin')
-    <p class="card-text ms-3 mt-5"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/driver" class="text-none align-middle text-dark">Driver</a> <span class="text-secondary">/</span> <a href="/admin/helper/editDriver" class="text-none align-middle text-dark">Edit</a> </p>
+    <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/driver" class="text-none align-middle text-dark">Driver</a> <span class="text-secondary">/</span> <a href="/admin/helper/editDriver" class="text-none align-middle text-dark">Edit</a> </p>
     <div class="container">
         <div class="card mb-3 border-0 shadow" style="max-width: 100%;">
             <div class="card-body ms-3 mb-3 me-3 mt-3" style="color: #47A992;">
@@ -40,6 +40,10 @@
                                 <div class="col-md-4">
                                     <label for="tanggalLahir" class="form-label">Tanggal lahir:</label>
                                     <input type="date" name="lahir" id="tanggalLahir" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="id_armada" class="form-label">Armada:</label>
+                                    <input type="text" name="namaArmada" id="id_armada" class="form-control" value="VT001" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="id_armada" class="form-label">Nomor Sim:</label>
