@@ -122,6 +122,33 @@
             </div>
         </div>
 
+        {{-- integrasi --}}
+        <div class="container-fluid" style="margin-top: 150px; margin-bottom: 300px; padding-top: 150px;" id="scrollspyIntegrasi">
+            <div class="container">
+                <h3 class="text-center mt-5">Perusahaan Al-Jabbar yang telah terintegrasi dengan Transport Berkah Armada</h3>
+                <div class="row" style="padding-top: 50px">
+                    <div class="col-2">
+                        <img src="https://www.mceasy.com/wp-content/uploads/2023/04/otobus-logo-putra-rafflesia.jpg" alt="" class="imgIntegrasi">
+                    </div>
+                    <div class="col-2">
+                        <img src="https://www.mceasy.com/wp-content/uploads/2023/04/otobus-logo-rosalia-indah.jpg" alt="" class="imgIntegrasi">
+                    </div>
+                    <div class="col-2">
+                        <img src="https://keretaapikita.com/wp-content/uploads/2020/09/Logo-Baru-PT-KAI.jpg" alt="" class="imgIntegrasi">
+                    </div>
+                    <div class="col-2">
+                        <img src="https://assets.kompasiana.com/items/album/2016/06/20/transjakarta-new-logo-57681ea11293733e048b45a3.jpeg?t=o&v=1200" alt="" class="imgIntegrasi">
+                    </div>
+                    <div class="col-2">
+                        <img src="https://awsimages.detik.net.id/content/2009/07/23/4/Garuda-Logo-Vertical-dalam.jpg" alt="" class="imgIntegrasi">
+                    </div>
+                    <div class="col-2">
+                        <img src="https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p1/294/2023/10/03/Logo-Whoosh-1902335397.jpg" alt="" class="imgIntegrasi">
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {{-- map keberangkatan --}}
         <div class="container-fluid" style="margin-top: 150px; margin-bottom: 150px; padding-top: 70px;" id="scrollspyMap">
             <h2 class="judulMap text-center">Map Keberangkatan</h2>

@@ -18,6 +18,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuBeranda">
                 <li><a class="dropdown-item" href="#scrollspyPlatform">Platform Al-Jabbar</a></li>
                 <li><a class="dropdown-item" href="#scrollspyTesti">Testimoni</a></li>
+                <li><a class="dropdown-item" href="#scrollspyIntegrasi">Integrasi</a></li>
                 <li><a class="dropdown-item" href="#scrollspyMap">Map Keberangkatan</a></li>
             </ul>
           </li>
