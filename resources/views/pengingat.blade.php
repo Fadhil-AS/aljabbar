@@ -57,18 +57,14 @@
     {{-- Visibilitas dan Transparansi --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="card shadow border-0">
-                <div class="card-body">
-                    <div class="row justify-content-center" style="padding: 50px">
-                        <div class="col-md-6 justify-content-center pt-5" style="">
-                            {{-- <h5 class="text-end" style="color: #47a992">Visibilitas dan Transparansi</h5> --}}
-                            <h2 class="text-end">Pantau Lokasi dan Armada kapanpun dan dimanapun</h2>
-                            <p class="text-end">Fitur TBA mempunyai fitur live view untuk menampilkan detail kendaraan dan pengemudi. Mudah dalam memantau armada, antisipasi keterlambatan, dan menjaga kepuasan pelanggan</p>
-                        </div>
-                        <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=1773&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
-                        </div>
-                    </div>
+            <div class="row justify-content-center" style="padding: 50px">
+                <div class="col-md-6 justify-content-center pt-5" style="">
+                    {{-- <h5 class="text-end" style="color: #47a992">Visibilitas dan Transparansi</h5> --}}
+                    <h2 class="text-end">Pantau Lokasi dan Armada kapanpun dan dimanapun</h2>
+                    <p class="text-end">Fitur TBA mempunyai fitur live view untuk menampilkan detail kendaraan dan pengemudi. Mudah dalam memantau armada, antisipasi keterlambatan, dan menjaga kepuasan pelanggan</p>
+                </div>
+                <div class="col-6">
+                    <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=1773&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
                 </div>
             </div>
         </div>
@@ -77,18 +73,14 @@
     {{-- Monitor biaya perjalanan --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="row justify-content-center" style="padding: 50px">
-                        <div class="col-md-6 justify-content-center" style="">
-                            <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
-                        </div>
-                        <div class="col-6 pt-5">
-                            {{-- <h5 class="" style="color: #47a992">Monitor biaya perjalanan</h5> --}}
-                            <h2 class="">Efisiensi tinggi, tingkatkan margin perusahaan</h2>
-                            <p class="">Fleet Operation mencatat pengeluaran tiap perjalanan, mulai dari bahan bakar hingga uang saku pengemudi. Lindungi perusahaan dari kerugian dengan iFuel Ultrasonic yang memberikan notifikasi ketika terjadi pengurangan BBM secara tiba-tiba.</p>
-                        </div>
-                    </div>
+            <div class="row justify-content-center" style="padding: 50px">
+                <div class="col-md-6 justify-content-center" style="">
+                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
+                </div>
+                <div class="col-6 pt-5">
+                    {{-- <h5 class="" style="color: #47a992">Monitor biaya perjalanan</h5> --}}
+                    <h2 class="">Efisiensi tinggi, tingkatkan margin perusahaan</h2>
+                    <p class="">Fleet Operation mencatat pengeluaran tiap perjalanan, mulai dari bahan bakar hingga uang saku pengemudi. Lindungi perusahaan dari kerugian dengan iFuel Ultrasonic yang memberikan notifikasi ketika terjadi pengurangan BBM secara tiba-tiba.</p>
                 </div>
             </div>
 
@@ -98,42 +90,32 @@
     {{-- Pantau perilaku berkendara --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="row justify-content-center" style="padding: 50px">
-                        <div class="col-md-6 justify-content-center pt-5" style="">
-                            {{-- <h5 class="text-end" style="color: #47a992">Pantau perilaku berkendara</h5> --}}
-                            <h2 class="text-end">Jaga kinerja pengemudi, jaga kualitas layanan</h2>
-                            <p class="text-end">Driver Behaviour mendeteksi perubahan kecepatan dan perilaku berkendara, seperti rem mendadak atau menikung tajam. Data lalu diolah dan dijadikan penilaian kualitas pengemudi sebagai bahan evaluasi.</p>
-                        </div>
-                        <div class="col-6">
-                            <img src="https://images.unsplash.com/photo-1610483576433-9a1108bc9ab6?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
-                        </div>
-                    </div>
+            <div class="row justify-content-center" style="padding: 50px">
+                <div class="col-md-6 justify-content-center pt-5" style="">
+                    {{-- <h5 class="text-end" style="color: #47a992">Pantau perilaku berkendara</h5> --}}
+                    <h2 class="text-end">Jaga kinerja pengemudi, jaga kualitas layanan</h2>
+                    <p class="text-end">Driver Behaviour mendeteksi perubahan kecepatan dan perilaku berkendara, seperti rem mendadak atau menikung tajam. Data lalu diolah dan dijadikan penilaian kualitas pengemudi sebagai bahan evaluasi.</p>
+                </div>
+                <div class="col-6">
+                    <img src="https://images.unsplash.com/photo-1610483576433-9a1108bc9ab6?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
                 </div>
             </div>
-
         </div>
     </div>
 
     {{-- Dokumentasi yang dapat diandalkan  --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <div class="row justify-content-center" style="padding: 50px">
-                        <div class="col-md-6 justify-content-center" style="">
-                            <img src="https://images.unsplash.com/photo-1606235136180-c08f347a86d8?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
-                        </div>
-                        <div class="col-6 pt-5">
-                            {{-- <h5 class="" style="color: #47a992">Dokumentasi yang dapat diandalkan</h5> --}}
-                            <h2 class="">Optimasi kapasitas dan waktu kerja armada</h2>
-                            <p class="">Armada terjaga prima dengan fitur Vehicle Management yang mengirim notifikasi perawatan berkala bagi kendaraan. Fitur License Reminder juga mengingatkan waktu dokumen kendaraan yang akan jatuh tempo.</p>
-                        </div>
-                    </div>
+            <div class="row justify-content-center" style="padding: 50px">
+                <div class="col-md-6 justify-content-center" style="">
+                    <img src="https://images.unsplash.com/photo-1606235136180-c08f347a86d8?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
+                </div>
+                <div class="col-6 pt-5">
+                    {{-- <h5 class="" style="color: #47a992">Dokumentasi yang dapat diandalkan</h5> --}}
+                    <h2 class="">Optimasi kapasitas dan waktu kerja armada</h2>
+                    <p class="">Armada terjaga prima dengan fitur Vehicle Management yang mengirim notifikasi perawatan berkala bagi kendaraan. Fitur License Reminder juga mengingatkan waktu dokumen kendaraan yang akan jatuh tempo.</p>
                 </div>
             </div>
-
         </div>
     </div>
 

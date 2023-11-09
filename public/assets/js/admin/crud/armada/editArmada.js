@@ -1,7 +1,3 @@
-$(document).ready( function () {
-    $('#dataDriver').DataTable();
-} );
-
 $(function (){
     let validator = $('form.form-valid').jbvalidator({
         errorMessage: true,

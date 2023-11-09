@@ -3,19 +3,22 @@
 }
 
 .crsl{
-    height: 700px;
+    min-height: 500px;
     display: flex;
-    flex: wrap;
 }
 
 .crslItem{
+    object-fit: cover;
     width: 100%;
     height: 600px;
 }
 
 .crsl1{
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
     transform: translateY(-450px);
-    filter: brightness(55%);
+    filter: brightness(50%);
 }
 
 .cardGroup{
@@ -24,26 +27,12 @@
     padding: 0 0.5rem;
 }
 
-.card1{
-    position: relative;
-    margin: 0 auto;
-    padding: 0 0.5rem;
+.card-title{
+    color: #47a992;
 }
 
-.card2{
-    position: relative;
-    margin: 0 auto;
-    padding: 0 0.5rem;
-}
 
-.cardFitur{
-    margin: auto;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
-}
-
-.card-body-left{
+.card-body-right{
     text-align: left;
     padding: 10%;
     position: relative;
@@ -55,7 +44,7 @@
     padding: 0 0.5rem;
 }
 
-.card-body-right{
+.card-body-left{
     text-align: right;
     padding: 10%;
     position: relative;
@@ -67,8 +56,23 @@
     padding: 0 0.5rem;
 }
 
+.card-text{
+    text-align: justify;
+}
+
 .card-img-top{
     height: auto;
     width: 100%;
     border-radius: 5px;
+}
+
+.card{
+    margin: auto;
+}
+
+.cardFitur{
+    margin: auto;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
 }

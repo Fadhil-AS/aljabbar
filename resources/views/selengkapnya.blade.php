@@ -21,9 +21,9 @@
 
     <div class="container-fluid" style="margin-top: 150px;margin-bottom: 150px">
       <div class="container">
-        <h4 class="text-primary text-center">Transport Berkah Armada</h4>
-        <h2 class="text-center">"Kami adalah jawaban lengkap untuk kebutuhan bisnis Anda."</h2>
-        <h5 class="text-secondary fw-light text-center">"Inovatif dan andal, bisnis kami di dunia ticketing bis memberikan pengalaman perjalanan yang mulus. Dengan teknologi canggih, kami memungkinkan Anda untuk mencari, membeli, dan melacak tiket bis dengan mudah. Kami berkomitmen untuk memberikan layanan yang efisien dan menyenangkan kepada pelanggan kami, menghadirkan kemudahan dalam merencanakan perjalanan mereka. Dari pemilihan kursi hingga konfirmasi instan, kami membuat perjalanan dengan bis menjadi lebih aman, efisien, dan menyenangkan."</h5>
+        <h4 class="text-center" style="color: #47a992">Transport Berkah Armada</h4>
+        <h2 class="text-center">Kami adalah jawaban lengkap untuk kebutuhan bisnis Anda.</h2>
+        <h5 class="text-secondary fw-light text-center">Inovatif dan andal, bisnis kami di dunia ticketing bis memberikan pengalaman perjalanan yang mulus. Dengan teknologi canggih, kami memungkinkan Anda untuk mencari, membeli, dan melacak tiket bis dengan mudah. Kami berkomitmen untuk memberikan layanan yang efisien dan menyenangkan kepada pelanggan kami, menghadirkan kemudahan dalam merencanakan perjalanan mereka. Dari pemilihan kursi hingga konfirmasi instan, kami membuat perjalanan dengan bis menjadi lebih aman, efisien, dan menyenangkan.</h5>
 
         <div class="row justify-content-center">
           <div class="col-md-4">
