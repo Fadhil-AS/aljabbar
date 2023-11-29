@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('nama_perusahaan', 255);
             $table->string('jabatan_pekerjaan', 255);
-            $table->integer('telepon');
+            $table->bigInteger('telepon');
             $table->integer('jumlah_kendaraan');
             $table->string('jenis_bus', 255);
             $table->string('provinsi', 255);

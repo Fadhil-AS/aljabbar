@@ -13,8 +13,7 @@ class bergabungController extends Controller
      */
     public function index()
     {
-        // $data = bergabungModel::all();
-        // return view('gabung', compact('data'));
+        //
     }
 
     /**
@@ -24,17 +23,14 @@ class bergabungController extends Controller
     {
         $data = bergabungModel::all();
         return view('gabung', compact('data'));
-        // $url = view('gabung');
-        // return $url;
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectRespons
+    public function store(Request $request)
     {
-        $validateData = $request->validate([
-            'id_admin' => 'required',
+        $request->validate([
             'nama_lengkap' => 'required|string|max:255',
             'email' => 'required|email',
             'password' => 'required',
@@ -47,18 +43,22 @@ class bergabungController extends Controller
             'alamat' => 'required|string|max:255',
         ]);
 
-        // $inputPass = Input::get('password');
-        // $password = Hash::make($inputPass);
+        $bergabung = new bergabungModel([
+            'nama_lengkap' => $request->input('nama_lengkap'),
+            'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')),
+            'nama_perusahaan' => $request->input('nama_perusahaan'),
+            'jabatan_pekerjaan' => $request->input('jabatan_pekerjaan'),
+            'telepon' => $request->input('telepon'),
+            'jumlah_kendaraan' => $request->input('jumlah_kendaraan'),
+            'jenis_bus' => $request->input('jenis_bus'),
+            'provinsi' => $request->input('provinsi'),
+            'alamat' => $request->input('alamat'),
+        ]);
 
-        $post = bergabungModel::create($validateData);
+        $bergabung->save();
 
-        // try {
-        //     dd('data berhasil disimpan');
-        // } catch (\Exception $e) {
-        //     dd('Gagal menyimpan data, pesan error: '. $e->getMessage());
-        // }
-
-        return redirect('/bergabung/posts')->with('success', 'Post berhasil dibuat!');
+        return redirect()->route('bergabung');
     }
 
     /**

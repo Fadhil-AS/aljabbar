@@ -43,11 +43,8 @@ Route::get('/login', function () {
 
 //bergabung
 // Route::get('/bergabung', [bergabungController::class, 'index']);
-Route::get('/bergabung', [bergabungController::class, 'create']);
-// Route::post('/bergabung/posts', [bergabungController::class, 'store'])->name('posts.gabung');
-Route::post('/bergabung/posts', function () {
-    return redirect('/bergabung/posts')->with('success', 'Post berhasil dibuat!');
-});
+Route::get('/bergabung', [bergabungController::class, 'create'])->name('bergabung');
+Route::post('/bergabung/posts', [bergabungController::class, 'store'])->name('posts.gabung');
 
 // admin
 Route::get('/admin', function () {

@@ -9,7 +9,7 @@
                 <h2 class="text-center pt-5">Masukkan Data Diri</h2>
                 <div class="card-body">
                     <form action="{{ route('posts.gabung') }}" method="POST" class="form-valid">
-                        @method('POST')
+                        {{-- @method('POST') --}}
                         @csrf
                         <div class="row pt-5">
                             <div class="col-md-4">
