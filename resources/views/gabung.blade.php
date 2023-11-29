@@ -8,11 +8,14 @@
             <div class="card border-0 shadow border-radius">
                 <h2 class="text-center pt-5">Masukkan Data Diri</h2>
                 <div class="card-body">
-                    <form action="" method="post" class="form-valid">
+                    <form action="{{ route('posts.gabung') }}" method="POST" class="form-valid">
+                        @method('POST')
+                        @csrf
                         <div class="row pt-5">
                             <div class="col-md-4">
                                 <label for="inputnamaLengkap" class="form-label">Nama Lengkap</label>
-                                <input type="text" name="namaLengkap" id="inputnamaLengkap" class="form-control" required>
+                                {{-- <input type="text" name="id_admin" id="id_admin" class="form-control" hidden> --}}
+                                <input type="text" name="nama_lengkap" id="inputnamaLengkap" class="form-control" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputemail" class="form-label">Email</label>
@@ -29,25 +32,25 @@
                         <div class="row pt-5">
                             <div class="col-md-4">
                                 <label for="inputPerusahaan" class="form-label">Nama Perusahaan</label>
-                                <input type="text" name="perusahaan" id="inputPerusahaan" class="form-control" required>
+                                <input type="text" name="nama_perusahaan" id="inputPerusahaan" class="form-control" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputjabatan" class="form-label">Jabatan pekerjaan</label>
-                                <input type="text" name="jabatan" id="inputJabatan" class="form-control" required>
+                                <input type="text" name="jabatan_pekerjaan" id="inputJabatan" class="form-control" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="inputTelephone" class="form-label">Nomor Telephone</label>
-                                <input type="number" name="telephone" id="inputTelephone" class="form-control" required>
+                                <input type="number" name="telepon" id="inputTelephone" class="form-control" required>
                             </div>
                         </div>
                         <div class="row pt-5">
                             <div class="col-md-6">
                                 <label for="inputJumlahKendaraan" class="form-label">Jumlah Kendaraan</label>
-                                <input type="number" name="jumlahKendaraan" id="inputJumlahKendaraan" class="form-control" required>
+                                <input type="number" name="jumlah_kendaraan" id="inputJumlahKendaraan" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputJenisBus" class="form-label">Jumlah Kendaraan</label>
-                                <select id="inputJenisBus" class="form-select" required>
+                                <label for="inputJenisBus" class="form-label">Jenis Bus</label>
+                                <select name = "jenis_bus" id="inputJenisBus" class="form-select" required>
                                     <option selected >Choose...</option>
                                     <option>Pariwisata</option>
                                     <option>Reguler</option>

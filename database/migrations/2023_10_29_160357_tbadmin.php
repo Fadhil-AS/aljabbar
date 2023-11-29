@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id_admin');
             $table->string('nama_lengkap', 255);
             $table->string('email', 255);
+            $table->string('password');
             $table->string('nama_perusahaan', 255);
             $table->string('jabatan_pekerjaan', 255);
             $table->integer('telepon');

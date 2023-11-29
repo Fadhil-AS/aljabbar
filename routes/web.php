@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\bergabungController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,12 +41,13 @@ Route::get('/login', function () {
     return view('loginsys.login');
 });
 
-Route::get('/bergabung', function () {
-    return view('gabung');
+//bergabung
+// Route::get('/bergabung', [bergabungController::class, 'index']);
+Route::get('/bergabung', [bergabungController::class, 'create']);
+// Route::post('/bergabung/posts', [bergabungController::class, 'store'])->name('posts.gabung');
+Route::post('/bergabung/posts', function () {
+    return redirect('/bergabung/posts')->with('success', 'Post berhasil dibuat!');
 });
-// Route::get('/signup', function () {
-//     return view('loginsys.signup');
-// });
 
 // admin
 Route::get('/admin', function () {
