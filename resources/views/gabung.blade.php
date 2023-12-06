@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 {{-- <link rel="stylesheet" href="{{asset('assets/css/gabung.css')}}"> --}}
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
 
 @section('container')
     <div class="container-fluid" style="margin-top: 150px; margin-bottom: 150px">
@@ -72,7 +73,7 @@
                         <div class="row pt-5">
                             <div class="col-md-12">
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-md text-light" style="background-color: #47a992">Bergabung</button>
+                                    <button type="submit" class="btn btn-md text-light" onclick="konfirmasiGabung()" style="background-color: #47a992">Bergabung</button>
                                 </div>
                             </div>
                         </div>
@@ -86,4 +87,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator"></script>
     <script src="{{ asset('assets/js/gabung.js') }}"></script>
     <script src="{{ asset('assets/js/showPassGabung.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+    <script src="{{ asset('assets/js/konfirmasiGabung.js') }}"></script>
 @endsection

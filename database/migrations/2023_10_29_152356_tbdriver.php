@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('tbdriver', function (Blueprint $table) {
             $table->increments('id_driver');
             $table->string('nama_driver');
+            $table->string('email')->unique();
             $table->date('tgl_lahir');
+            $table->string('foto_profile');
             $table->bigInteger('nik');
             $table->bigInteger('nomor_sim');
             $table->timestamps();
-
         });
     }
 

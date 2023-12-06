@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('tbhelper', function (Blueprint $table) {
             $table->increments('id_helper');
             $table->string('nama_helper', 255);
+            $table->string('email')->unique();
             $table->date('tgl_lahir');
+            $table->string('foto_profile');
             $table->bigInteger('nik');
+            // $table->unsignedInteger('id_armada'); // Menambah kolom untuk foreign key
+            // $table->foreign('id_armada')->references('id_armada')->on('tbarmada');
             $table->timestamps();
         });
     }

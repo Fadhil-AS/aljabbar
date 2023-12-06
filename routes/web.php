@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bergabungController;
-
+use App\Http\Controllers\helperController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,7 +10,7 @@ use App\Http\Controllers\bergabungController;
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| be assigned to the "web" middleware group. Make som{{ ethi }}ng great!
 |
 */
 
@@ -29,15 +29,15 @@ Route::get('/pengingat', function () {
 });
 
 Route::get('/keuangan', function () {
-    return view('keuangan');
+    return view('keuangan');{{  }}
 });
 
 Route::get('/selengkapnya', function () {
-    return view('selengkapnya');
+    return view('selengkapnya');{{  }}
 });
 
 // login system
-Route::get('/login', function () {
+Route::get('/login', function () {{{  }}
     return view('loginsys.login');
 });
 
@@ -65,18 +65,13 @@ Route::get('/admin/armada/edit', function () {
     return view('admin.crud.armada.editArmada');
 });
 
-Route::get('/admin/helper', function () {
-    return view('admin.helper');
-});
-
-// crud helper
-Route::get('/admin/helper/detail', function () {
-    return view('admin.crud.helper.detailHelper');
-});
-
-Route::get('/admin/helper/edit', function () {
-    return view('admin.crud.helper.editHelper');
-});
+// helper
+Route::get('/admin/helper', [helperController::class, 'index'])->name('admin.helper');
+Route::post('/admin/helper/posts', [helperController::class, 'store'])->name('post.helper');
+Route::get('/admin/helper/{id}/detail', [helperController::class, 'show'])->name('detail.helper');
+Route::get('/admin/helper/{id}/edit', [helperController::class, 'edit'])->name('edit.helper');
+Route::put('/admin/helper/{id}', [helperController::class, 'update'])->name('update.helper');
+Route::delete('/admin/helper/delete/{id}', [helperController::class, 'destroy'])->name('destroy.helper');
 
 Route::get('/admin/keuangan', function () {
     return view('admin.keuangan');

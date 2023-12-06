@@ -26,8 +26,10 @@ return new class extends Migration
             $table->string('tempat_akhir');
             $table->time('jam_keberangkatan');
             $table->date('tanggal_keberangkatan');
-            $table->unsignedInteger('id_driver'); // Menambah kolom untuk foreign key
+            $table->unsignedInteger('id_driver');
+            $table->unsignedInteger('id_helper');
             $table->foreign('id_driver')->references('id_driver')->on('tbdriver');
+            $table->foreign('id_helper')->references('id_helper')->on('tbhelper');
             $table->timestamps();
         });
     }
