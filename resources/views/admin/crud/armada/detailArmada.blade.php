@@ -9,38 +9,42 @@
         <div class="card mb-3 border-0 shadow" style="max-width: 100%;">
             <div class="row g-0">
                 <div class="col-md-2">
-                    <img src="https://images.unsplash.com/photo-1657024574214-c614211d3ff9?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-circle mt-3 ms-3 mb-3 me-3" style=" width: 175px; height: 175px;">
+                    <img src="{{asset('storage/'. $dataArm->foto_armada)}}" class="rounded-circle mt-3 ms-3 mb-3 me-3" style=" width: 175px; height: 175px;">
                 </div>
                 <div class="col-md-3">
                     <div class="card-body mt-4">
-                        <h1 id="noBodyLabel"></h1>
-                        <h5 id="julukanLabel"></h5>
-                        <h5 id="platNoLabel"></h5>
+                        <h1>{{$dataArm->nomor_body}}</h1>
+                        <h5>{{$dataArm->julukan}}</h5>
+                        <h5>{{$dataArm->plat_nomor}}</h5>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card-body mt-4">
                         <div class="d-flex">
-                            <i class="fa-solid fa-chair ikon"></i></i><h4 id="kapasitasLabel"></h4>
+                            <i class="fa-solid fa-chair ikon"></i></i><h4>{{$dataArm->kapasitas_kursi}} Kursi</h4>
                         </div>
                         <div class="d-flex">
-                            <i class="fa-solid fa-crown ikon"></i></i><h4 id="kelasLabel"></h4>
+                            <i class="fa-solid fa-crown ikon"></i></i><h4>{{$dataArm->kelas}}</h4>
                         </div>
                         <div class="d-flex">
-                            <i class="fa-solid fa-clock-rotate-left ikon"></i></i><h4 id="statusLabel"></h4>
+                            <i class="fa-solid fa-clock-rotate-left ikon"></i></i><h4>{{$dataArm->status}}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card-body mt-4">
                         <div class="d-flex">
-                            <i class="fa-solid fa-user ikon"></i><h4 id="driver1Label"></h4>
+                            <i class="fa-solid fa-user ikon"></i><h4>{{ $dataDrv->nama_driver }}</h4>
                         </div>
                         <div class="d-flex">
-                            <i class="fa-solid fa-user ikon"></i><h4 id="driver2Label"></h4>
+                            <i class="fa-regular fa-user ikon"></i><h4>{{ $dataHlp->nama_helper }}</h4>
                         </div>
-                        <div class="d-flex">
-                            <i class="fa-regular fa-user ikon"></i><h4 id="helperLabel"></h4>
+                        <div>
+                            <form action="/admin/armada/{{$dataArm->id_armada}}/edit" method="GET">
+                                <button type="submit" class="btn btn-success" style="background-color: #47a992">
+                                    <i class="fa-regular fa-pen-to-square"></i> Edit
+                                </button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -58,12 +62,12 @@
                     </div>
                     <div class="card-item mt-3 ms-4">
                         <div class="d-flex">
-                            <h5 class="col-md-2">Bandung</h5>
+                            <h5 class="col-md-2">{{$dataArm->tempat_awal}}</h5>
                             <i class="fa-solid fa-repeat col-md-2"></i>
-                            <h5 class="col-md-5">Denpasar</h5>
+                            <h5 class="col-md-5">{{$dataArm->tempat_akhir}}</h5>
                             <i class="fa-regular fa-calendar col-md-0"></i>
-                            <h5 class="col-md-1">09.00</h5>
-                            <h5 class="col-md-2">12/22/2023</h5>
+                            <h5 class="col-md-1">{{$dataArm->jam_keberangkatan}}</h5>
+                            <h5 class="col-md-2">{{$dataArm->tanggal_keberangkatan}}</h5>
                         </div>
                         <h5 class="mt-3">30 Penumpang</h5>
                     </div>

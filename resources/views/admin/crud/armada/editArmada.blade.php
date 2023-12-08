@@ -16,44 +16,104 @@
             <div class="card border-0 shadow">
                 <div class="card-body ms-3 mb-3 me-3 mt-3">
                     <div class="card-item">
-                        <form action="" method="post" class="form-valid">
+                        <form action="{{ route('update.armada', $dataArm->id_armada )}}" method="post" class="form-valid" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
                             <div class="row pb-3">
                                 <div class="col-md-4">
                                     <input type="number" name="nomorArmada" id="id_armada" hidden>
-                                    <label for="platNomorInput" class="form-label">Plat nomor:</label>
-                                    <input type="text" name="platNomor" id="platNomorInput" value="D 7335 VGA" class="form-control" required>
+                                    <label for="plat_nomor" class="form-label">Plat nomor:</label>
+                                    <input type="text" name="plat_nomor" id="plat_nomor" value="{{ $dataArm->plat_nomor }}" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="noBodyInput" class="form-label">No Body:</label>
-                                    <input type="text" name="noBodyInput" id="noBodyInput" value="VT001" class="form-control" required>
+                                    <label for="nomor_body" class="form-label">No Body:</label>
+                                    <input type="text" name="nomor_body" id="nomor_body" value="{{ $dataArm->nomor_body }}" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="fotoArmadaInput" class="form-label">Foto Armada :</label>
-                                    <input type="file" name="fotoArmadaInput" id="fotoArmadaInput" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row pb-3">
-                                <div class="col-md-4">
-                                    <label for="kelasInput" class="form-label">Kelas :</label>
-                                    <input type="text" name="kelasInput" id="kelasInput" value="Executive" class="form-control" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="kapasitasInput" class="form-label">Kapasitas :</label>
-                                    <input type="number" name="kapasitasInput" id="kapasitasInput" value="32" class="form-control" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="julukanInput" class="form-label">Julukan/AKA :</label>
-                                    <input type="text" name="julukanInput" id="julukanInput" value="Red Velvet" class="form-control" required>
+                                    <label for="foto_armada" class="form-label">Foto Armada :</label>
+                                    <input type="file" name="foto_armada" id="foto_armada" class="form-control" required>
+                                    <img src="{{asset('storage/'. $dataArm->foto_armada)}}" alt="" style="width: 250px; height:250px;">
                                 </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="col-md-4">
-                                    <label for="jarakTempuhInput" class="form-label">Jarak Tempuh :</label>
-                                    <input type="number" name="jarakTempuhInput" id="jarakTempuhInput" class="form-control" required>
+                                    <label for="kelas" class="form-label">Kelas :</label>
+                                    <select name="kelas" id="kelas" class="form-control" required>
+                                        <option value="" selected disabled>Pilih Kelas</option>
+                                        <option value="Executive">Executive</option>
+                                        <option value="VIP">VIP</option>
+                                        <option value="Ekonomi">Ekonomi</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="kirInput" class="form-label">Tanggal KIR :</label>
-                                    <input type="date" name="kirInput" id="kirInput" class="form-control" required>
+                                    <label for="kapasitas_kursi" class="form-label">Kapasitas :</label>
+                                    <input type="number" name="kapasitas_kursi" id="kapasitas_kursi" value="{{ $dataArm->kapasitas_kursi }}" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="julukan" class="form-label">Julukan/AKA :</label>
+                                    <input type="text" name="julukan" id="julukan" value="{{ $dataArm->julukan }}" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-4">
+                                    <label for="jarak_tempuh" class="form-label">Jarak Tempuh :</label>
+                                    <input type="number" name="jarak_tempuh" id="jarak_tempuh" value="{{ $dataArm->jarak_tempuh }}" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="tgl_kir" class="form-label">Tanggal KIR :</label>
+                                    <input type="date" name="tgl_kir" id="tgl_kir" value="{{ $dataArm->tgl_kir }}" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-4">
+                                    <label for="status" class="form-label">Status :</label>
+                                    <select name="status" id="status" class="form-control" required>
+                                        <option value="" selected disabled>Pilih Status</option>
+                                        <option value="Perpal">Perpal</option>
+                                        <option value="On Trip">On Trip</option>
+                                        <option value="Perbaikan">Perbaikan</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="tempat_awal" class="form-label">Tempat Awal :</label>
+                                    <input type="text" name="tempat_awal" id="tempat_awal" value="{{ $dataArm->tempat_awal }}" class="form-control" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="tempat_akhir" class="form-label">Tempat Akhir :</label>
+                                    <input type="text" name="tempat_akhir" id="tempat_akhir" value="{{ $dataArm->tempat_akhir }}" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-6">
+                                    <label for="jam_keberangkatan" class="form-label">Jam Keberangkatan :</label>
+                                    <input type="time" name="jam_keberangkatan" id="jam_keberangkatan" value="{{ $dataArm->jam_keberangkatan }}" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tanggal_keberangkatan" class="form-label">Tanggal Keberangkatan:</label>
+                                    <input type="date" name="tanggal_keberangkatan" id="tanggal_keberangkatan" value="{{ $dataArm->tanggal_keberangkatan }}" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
+                                <!-- Bagian Inputan Driver -->
+                                <div class="col-md-6">
+                                    <label for="id_driver" class="form-label">Driver :</label>
+                                    <select name="id_driver" id="id_driver" class="form-control" required>
+                                        <option value="" selected disabled>Pilih Driver</option>
+                                        @foreach ($dataDrv as $driver)
+                                            <option value="{{ $driver->id_driver }}">{{ $driver->nama_driver }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+    
+                                <!-- Bagian Inputan Helper -->
+                                <div class="col-md-6">
+                                    <label for="id_helper" class="form-label">Helper :</label>
+                                    <select name="id_helper" id="id_helper" class="form-control" required>
+                                        <option value="" selected disabled>Pilih Helper</option>
+                                        @foreach ($dataHlp as $helper)
+                                            <option value="{{ $helper->id_helper }}">{{ $helper->nama_helper }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="row pb-3">

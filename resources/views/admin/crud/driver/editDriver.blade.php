@@ -16,38 +16,37 @@
             <div class="card border-0 shadow">
                 <div class="card-body ms-3 mb-3 me-3 mt-3">
                     <div class="card-item">
-                        <form action="" method="post" class="form-valid">
+                        <form action="{{ route('update.driver', $dataDrv->id_driver )}}" method="post" class="form-valid">
+                            @csrf
+                            @method('PUT')
                             <div class="row pb-3">
                                 <div class="col-md-4">
                                     <input type="number" name="idHelper" id="id_helper" value="1" hidden>
-                                    <label for="namaHelper" class="form-label">Nama Driver:</label>
-                                    <input type="text" name="nama" id="namaHelper" value="Kunto" class="form-control" required>
+                                    <label for="nama_driver" class="form-label">Nama Driver:</label>
+                                    <input type="text" name="nama_driver" id="nama_driver" value="{{$dataDrv->nama_driver}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="email" class="form-label">Email:</label>
-                                    <input type="email" name="email" id="email" value="kuntoo@gmail.com" class="form-control" required>
+                                    <input type="email" name="email" id="email" value="{{$dataDrv->email}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="nik" class="form-label">NIK</label>
-                                    <input type="number" name="nik" id="nik" value="320000274810927" class="form-control" required>
+                                    <label for="tgl_lahir" class="form-label">Tanggal Lahir:</label>
+                                    <input type="date" name="tgl_lahir" id="tgl_lahir" value="{{$dataDrv->tgl_lahir}}" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="col-md-4">
                                     <label for="foto_profile" class="form-label">Foto profile:</label>
-                                    <input type="file" name="foto" id="foto_profile" class="form-control" required>
+                                    <input type="file" name="foto_profile" id="foto_profile" class="form-control" required>
+                                    <img src="{{asset('storage/'. $dataDrv->foto_profile)}}" alt="" style="width: 250px; height:250px;">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="tanggalLahir" class="form-label">Tanggal lahir:</label>
-                                    <input type="date" name="lahir" id="tanggalLahir" class="form-control" required>
+                                    <label for="nik" class="form-label">NIK:</label>
+                                    <input type="number" name="nik" id="nik" value="{{$dataDrv->nik}}" class="form-control" required>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="id_armada" class="form-label">Armada:</label>
-                                    <input type="text" name="namaArmada" id="id_armada" class="form-control" value="VT001" required>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="id_armada" class="form-label">Nomor Sim:</label>
-                                    <input type="text" name="namaArmada" id="id_armada" class="form-control" value="1326-0887-000055" required>
+                                    <label for="nomor_sim" class="form-label">Nomor Sim:</label>
+                                    <input type="text" name="nomor_sim" id="nomor_sim" class="form-control" value="{{$dataDrv->nomor_sim}}" required>
                                 </div>
                             </div>
                             <div class="row pb-3">

@@ -10,11 +10,27 @@
                 <div class="mt-4 text-center">
                     <h3><a href="/" class="link-underline link-underline-opacity-0 text-dark">Transport Berkah Armada</a></h3>
                 </div>
-                <form action="" class="form-valid" novalidate>
+                <form action="/login" class="form-valid" method="POST">
+                    @csrf
+
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('loginError') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+
                     <h4 class="text-center">Masuk ke Akun</h4>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" name="email" placeholder="Masukkan Email" required>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control @error('email') 
+                            is-invalid
+                        @enderror" id="email" name="email" aria-describedby="emailHelp" name="email" placeholder="Masukkan Email" required value="{{ old('email') }}">
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="mb-4">
                         <label class="form-label" for="password">Password</label>

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\bergabungController;
 use App\Http\Controllers\helperController;
+use App\Http\Controllers\driverController;
+use App\Http\Controllers\armadaController;
+use App\Http\Controllers\loginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,20 +54,6 @@ Route::get('/admin', function () {
     return view('admin.beranda');
 });
 
-
-Route::get('/admin/armada', function () {
-    return view('admin.armada');
-});
-
-// crud armada
-Route::get('/admin/armada/detail', function () {
-    return view('admin.crud.armada.detailArmada');
-});
-
-Route::get('/admin/armada/edit', function () {
-    return view('admin.crud.armada.editArmada');
-});
-
 // helper
 Route::get('/admin/helper', [helperController::class, 'index'])->name('admin.helper');
 Route::post('/admin/helper/posts', [helperController::class, 'store'])->name('post.helper');
@@ -73,19 +62,29 @@ Route::get('/admin/helper/{id}/edit', [helperController::class, 'edit'])->name('
 Route::put('/admin/helper/{id}', [helperController::class, 'update'])->name('update.helper');
 Route::delete('/admin/helper/delete/{id}', [helperController::class, 'destroy'])->name('destroy.helper');
 
+// driver
+Route::get('/admin/driver', [driverController::class, 'index'])->name('admin.driver');
+Route::post('/admin/driver/posts', [driverController::class, 'store'])->name('post.driver');
+Route::get('/admin/driver/{id}/detail', [driverController::class, 'show'])->name('detail.driver');
+Route::get('/admin/driver/{id}/edit', [driverController::class, 'edit'])->name('edit.driver');
+Route::put('/admin/driver/{id}', [driverController::class, 'update'])->name('update.driver');
+Route::delete('/admin/driver/delete/{id}', [driverController::class, 'destroy'])->name('destroy.driver');
+
+// armada
+Route::get('/admin/armada', [armadaController::class, 'index'])->name('admin.armada');
+Route::post('/admin/armada/posts', [armadaController::class, 'store'])->name('post.armada');
+Route::get('/admin/armada/{id}/detail', [armadaController::class, 'show'])->name('detail.armada');
+Route::get('/admin/armada/{id}/edit', [armadaController::class, 'edit'])->name('edit.armada');
+Route::put('/admin/armada/{id}', [armadaController::class, 'update'])->name('update.armada');
+Route::delete('/admin/armada/delete/{id}', [armadaController::class, 'destroy'])->name('destroy.armada');
+
+
+//login logout
+Route::get('/login', [loginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [loginController::class, 'authenticate']);
+Route::post('/logout', [loginController::class, 'logout']);
+
 Route::get('/admin/keuangan', function () {
     return view('admin.keuangan');
 });
 
-// crud driver
-Route::get('/admin/driver', function () {
-    return view('admin.driver');
-});
-
-Route::get('/admin/driver/detail', function () {
-    return view('admin.crud.driver.detailDriver');
-});
-
-Route::get('/admin/driver/edit', function () {
-    return view('admin.crud.driver.editDriver');
-});

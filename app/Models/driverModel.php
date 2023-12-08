@@ -10,11 +10,6 @@ class driverModel extends Model
 {
     use HasFactory;
     protected $table = 'tbdriver';
-    protected $fillable = ['nama_driver', 'tgl_driver', 'nik', 'id_armada','nomor_sim'];
-
-    // Define the relationship with tbarmada
-    public function armada()
-    {
-        return $this->belongsTo(armadaModel::class, 'id_armada', 'id_armada');
-    }
+    protected $primaryKey = 'id_driver';
+    protected $fillable = ['nama_driver', 'email', 'foto_profile', 'tgl_lahir', 'nik', 'nomor_sim'];
 }
