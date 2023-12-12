@@ -55,4 +55,5 @@
     {{-- Sweet Alert 2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
     <script src="{{ asset('assets/js/admin/crud/helper/deleteHelper.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/crud/helper/tambahHelper.js') }}"></script>
 @endsection

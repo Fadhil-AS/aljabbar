@@ -32,7 +32,7 @@
                     <li><a class="dropdown-item detail" href="/admin/armada/{{$d->id_armada}}/detail"><i class="fa-regular fa-eye"></i> Lihat</a></li>
                     <li><a class="dropdown-item" href="/admin/armada/{{$d->id_armada}}/edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
                     <li>
-                      <form action="/admin/armada/delete/{{ $d->id_armada }}" method="POST">
+                      <form class="form-valid" action="/admin/armada/delete/{{ $d->id_armada }}" method="POST">
                           @csrf
                           @method('DELETE')
                           <button class="dropdown-item" type="submit" id="id_armada" onclick="hapusArmada()"><i class="fa-solid fa-trash"></i> Hapus</button>

@@ -1,8 +1,8 @@
-function hapusDriver() {
+function tambahArmada() {
     event.preventDefault();
     Swal.fire({
-        title: 'Konfirmasi hapus driver',
-        text: 'Apakah Anda yakin ingin menghapus driver tersebut?',
+        title: 'Konfirmasi data yang dimasukkan',
+        text: 'Apakah Anda yakin data yang dimasukkan sudah benar?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Ya',
@@ -10,7 +10,7 @@ function hapusDriver() {
     }).then((result) => {
         if (result.isConfirmed) {
             $('.form-valid').submit();
-            Swal.fire('Berhasil', 'Data berhasil dihapus!', 'success');
+            Swal.fire('Berhasil', 'Data berhasil ditambahkan!', 'success');
         }
     });
 }

@@ -1,5 +1,8 @@
 @extends('layouts.admin.mainAdmin')
 
+{{-- sweet alert --}}
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
 @section('containAdmin')
     <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/driver" class="text-none align-middle text-dark">Driver</a> <span class="text-secondary">/</span> <a href="/admin/helper/editDriver" class="text-none align-middle text-dark">Edit</a> </p>
     <div class="container">
@@ -16,7 +19,7 @@
             <div class="card border-0 shadow">
                 <div class="card-body ms-3 mb-3 me-3 mt-3">
                     <div class="card-item">
-                        <form action="{{ route('update.driver', $dataDrv->id_driver )}}" method="post" class="form-valid">
+                        <form action="{{ route('update.driver', $dataDrv->id_driver )}}" method="post" class="form-valid" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row pb-3">
@@ -52,7 +55,7 @@
                             <div class="row pb-3">
                                 <div class="col-md-12">
                                     <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-md text-light" style="background-color: #47a992">Simpan</button>
+                                        <button type="submit" class="btn btn-md text-light" onclick="editDriver()" style="background-color: #47a992">Simpan</button>
                                         <a href="/admin/driver" class="btn text-center btn-outline-danger">Batalkan</a>
                                     </div>
                                 </div>
@@ -72,4 +75,7 @@
 
     {{-- js --}}
     <script src="{{ asset('assets/js/admin/crud/driver/editDriver.js') }}"></script>
+
+    {{-- SweetAlert --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 @endsection

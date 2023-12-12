@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="d-grid gap-2">
-                                <button type="submit" class="btn btn-md text-light" style="background-color: #47a992">Simpan</button>
+                                <button type="submit" class="btn btn-md text-light" onclick="tambahDriver()" style="background-color: #47a992">Simpan</button>
                                 <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Batalkan</button>
                             </div>
                         </div>

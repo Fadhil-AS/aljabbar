@@ -5,11 +5,15 @@
     <div id="carouselSlide" class="carousel slide" style="margin-bottom: 150px">
         <div class="carousel-inner crsl">
           <div class="carousel-item active crslItem ">
-            <img src="https://images.unsplash.com/photo-1546955870-9fc9e5534349?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid" alt="..." style="width:100%; height: 85%; object-fit: cover; filter: brightness(50%)">
-            <div class="carousel-caption d-none d-md-block">
-              <h5 class="breadcumb mb-5"><a href="/" class="text-light" style="text-decoration: none">Beranda</a> / Pengingat</h5>
-              <h3 class="mb-5">Sederhanakan Manajemen Armada Anda di Transport Berkah Armada</h3>
-            </div>
+            @foreach ($datapengingat as $carousel)
+                @if ($carousel->id == 1)
+                    <img src="{{$carousel -> imageurl}}" class=" w-100 crsl1" alt="..." style="height: 1100px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 class="breadcumb mb-5"><a href="/" class="text-light">Beranda</a> / Monitor Armada</h5>
+                        <h4>{{$carousel -> text}}</h4>
+                    </div>
+                @endif
+            @endforeach
           </div>
         </div>
     </div>
@@ -19,35 +23,21 @@
         <div class="container">
             <h4 class="text-center" style="color: #47a992">Platform Al-Jabbar untuk Industri Ekonomi</h4>
             <h2 class="text-center">Mudah dalam mengatur operasional armada dan perjalanan</h2>
-            <h5 class="text-center text-secondary" style="padding-left: 50px; padding-right: 50px;">Transport Berkah Armada bantu meningkatkan visibilitas dan kontrol terhadap armada dan pengemudi untuk memaksimalkan layanan dan kepuasan</h5>
+            <h5 class="text-center text-secondary fw-normal" style="padding-left: 50px; padding-right: 50px;">Transport Berkah Armada bantu meningkatkan visibilitas dan kontrol terhadap armada dan pengemudi untuk memaksimalkan layanan dan kepuasan</h5>
             <div class="row justify-content-center" style="padding: 50px">
-                <div class="col-md-4">
-                    <div class="card shadow border-0" style="width: 350px; height: 300px">
-                        <h1 class="text-center" style="padding-top: 50px"><i class="fa-solid fa-laptop"></i></h1>
-                        <div class="card-body">
-                            <h5 class="text-start">Pantau asset kendaraan anda secara real time</h5>
-                            <p class="card-text">Alat sensor yang efektif untuk memantau armada baik yang diam maupun bergerak</p>
+                @foreach ($datapengingat as $card)
+                    @if ($card->id >= 2 && $card->id <= 4)
+                        <div class="col-md-4">
+                            <div class="card shadow border-0" style="width: 350px; height: 300px">
+                                <h1 class="text-center" style="padding-top: 50px"><i class="{{$card->imageurl}}"></i></h1>
+                                <div class="card-body">
+                                    <h5 class="text-center">{{$card->header}}</h5>
+                                    <p class="card-text text-center text-secondary">{{$card->text}}</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow border-0" style="width: 350px; height: 300px">
-                        <h1 class="text-center" style="padding-top: 50px"><i class="fa-solid fa-bolt"></i></h1>
-                        <div class="card-body">
-                            <h5 class="text-start">Cepat dalam ambil keputusan</h5>
-                            <p class="card-text">Amati perilaku pengemudi untuk mengantisipasi kendala pada armada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card shadow border-0" style="width: 350px; height: 300px">
-                        <h1 class="text-center" style="padding-top: 50px"><i class="fa-solid fa-chart-gantt"></i></h1>
-                        <div class="card-body">
-                            <h5 class="text-start">Manajemen operasional mudah</h5>
-                            <p class="card-text">Atur dan jadwalkan armada anda dengan teratur dan akurat</p>
-                        </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
 
@@ -57,72 +47,83 @@
     {{-- Visibilitas dan Transparansi --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="row justify-content-center" style="padding: 50px">
-                <div class="col-md-6 justify-content-center pt-5" style="">
-                    {{-- <h5 class="text-end" style="color: #47a992">Visibilitas dan Transparansi</h5> --}}
-                    <h2 class="text-end">Pantau Lokasi dan Armada kapanpun dan dimanapun</h2>
-                    <p class="text-end">Fitur TBA mempunyai fitur live view untuk menampilkan detail kendaraan dan pengemudi. Mudah dalam memantau armada, antisipasi keterlambatan, dan menjaga kepuasan pelanggan</p>
-                </div>
-                <div class="col-6">
-                    <img src="https://images.unsplash.com/photo-1548345680-f5475ea5df84?auto=format&fit=crop&q=80&w=1773&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
-                </div>
-            </div>
+            @foreach ($datapengingat as $fitur)
+                @if ($fitur->id == 5)
+                    <div class="row justify-content-center" style="padding: 50px">
+                        <div class="col-md-6 justify-content-center pt-5" style="">
+                            <h2 class="text-end">{{$fitur->header}}</h2>
+                            <h5 class="text-secondary fw-normal text-end">{{$fitur->text}}</h5>
+                        </div>
+                        <div class="col-6">
+                            <img src="{{$fitur->imageurl}}" alt="" class="" style="width: 500px; height: 350px">
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 
     {{-- Monitor biaya perjalanan --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="row justify-content-center" style="padding: 50px">
-                <div class="col-md-6 justify-content-center" style="">
-                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
-                </div>
-                <div class="col-6 pt-5">
-                    {{-- <h5 class="" style="color: #47a992">Monitor biaya perjalanan</h5> --}}
-                    <h2 class="">Efisiensi tinggi, tingkatkan margin perusahaan</h2>
-                    <p class="">Fleet Operation mencatat pengeluaran tiap perjalanan, mulai dari bahan bakar hingga uang saku pengemudi. Lindungi perusahaan dari kerugian dengan iFuel Ultrasonic yang memberikan notifikasi ketika terjadi pengurangan BBM secara tiba-tiba.</p>
-                </div>
-            </div>
-
+            @foreach ($datapengingat as $fitur)
+                @if ($fitur->id == 6)
+                    <div class="row justify-content-center" style="padding: 50px">
+                        <div class="col-md-6 justify-content-center" style="">
+                            <img src="{{$fitur->imageurl}}" alt="" class="float-end" style="width: 500px; height: 350px">
+                        </div>
+                        <div class="col-6 pt-5">
+                            <h2 class="">{{$fitur->header}}</h2>
+                            <h5 class="text-secondary fw-normal">{{$fitur->text}}</h5>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 
     {{-- Pantau perilaku berkendara --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="row justify-content-center" style="padding: 50px">
-                <div class="col-md-6 justify-content-center pt-5" style="">
-                    {{-- <h5 class="text-end" style="color: #47a992">Pantau perilaku berkendara</h5> --}}
-                    <h2 class="text-end">Jaga kinerja pengemudi, jaga kualitas layanan</h2>
-                    <p class="text-end">Driver Behaviour mendeteksi perubahan kecepatan dan perilaku berkendara, seperti rem mendadak atau menikung tajam. Data lalu diolah dan dijadikan penilaian kualitas pengemudi sebagai bahan evaluasi.</p>
-                </div>
-                <div class="col-6">
-                    <img src="https://images.unsplash.com/photo-1610483576433-9a1108bc9ab6?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="" style="width: 500px; height: 350px">
-                </div>
-            </div>
+            @foreach ($datapengingat as $fitur)
+                @if ($fitur->id == 7)
+                    <div class="row justify-content-center" style="padding: 50px">
+                        <div class="col-md-6 justify-content-center pt-5" style="">
+                            <h2 class="text-end">{{$fitur->header}}</h2>
+                            <h5 class="text-secondary fw-normal text-end">{{$fitur->text}}</h5>
+                        </div>
+                        <div class="col-6">
+                            <img src="{{$fitur->imageurl}}" alt="" class="" style="width: 500px; height: 350px">
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 
     {{-- Dokumentasi yang dapat diandalkan  --}}
     <div class="container-fluid" style="margin-bottom: 150px">
         <div class="container">
-            <div class="row justify-content-center" style="padding: 50px">
-                <div class="col-md-6 justify-content-center" style="">
-                    <img src="https://images.unsplash.com/photo-1606235136180-c08f347a86d8?auto=format&fit=crop&q=80&w=1770&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="float-end" style="width: 500px; height: 350px">
-                </div>
-                <div class="col-6 pt-5">
-                    {{-- <h5 class="" style="color: #47a992">Dokumentasi yang dapat diandalkan</h5> --}}
-                    <h2 class="">Optimasi kapasitas dan waktu kerja armada</h2>
-                    <p class="">Armada terjaga prima dengan fitur Vehicle Management yang mengirim notifikasi perawatan berkala bagi kendaraan. Fitur License Reminder juga mengingatkan waktu dokumen kendaraan yang akan jatuh tempo.</p>
-                </div>
-            </div>
+            @foreach ($datapengingat as $fitur)
+                @if ($fitur->id == 8)
+                    <div class="row justify-content-center" style="padding: 50px">
+                        <div class="col-md-6 justify-content-center" style="">
+                            <img src="{{$fitur->imageurl}}" alt="" class="float-end" style="width: 500px; height: 350px">
+                        </div>
+                        <div class="col-6 pt-5">
+                            <h2 class="">{{$fitur->header}}</h2>
+                            <h5 class="text-secondary fw-normal">{{$fitur->text}}</h5>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
         </div>
     </div>
 
 
 
     {{-- hardware --}}
-    {{-- <div class="container-fluid" style="margin-bottom: 450px">
+    <!-- <div class="container-fluid" style="margin-bottom: 450px">
         <div class="container">
             <h4 class="text-center" style="color: #47a992">Hardware</h4>
             <h2 class="text-center">Perangkat dan Sensor untuk Lengkapi Armada</h2>
@@ -166,5 +167,5 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>  -->
 @endsection
