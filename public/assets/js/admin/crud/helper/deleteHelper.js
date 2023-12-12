@@ -1,4 +1,5 @@
 function hapusHelper() {
+    event.preventDefault();
     Swal.fire({
         title: 'Konfirmasi hapus helper',
         text: 'Apakah Anda yakin ingin menghapus helper tersebut?',
@@ -8,7 +9,7 @@ function hapusHelper() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-        //   action sesudah menghapus
+            $('.form-valid').submit();
             Swal.fire('Berhasil', 'Data berhasil dihapus!', 'success');
         }
     });

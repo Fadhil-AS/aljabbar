@@ -3,7 +3,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
 
     {{-- sweet alert --}}
-    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+    
 @section('containAdmin')
     {{-- breadcrumbs --}}
     <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/helper" class="text-none align-middle text-dark">Helper</a></p>
@@ -53,6 +54,7 @@
     <script src="{{ asset('assets/js/admin/helper.js') }}"></script>
 
     {{-- Sweet Alert 2 --}}
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
     <script src="{{ asset('assets/js/admin/crud/helper/deleteHelper.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/crud/helper/tambahHelper.js') }}"></script>
 @endsection
