@@ -39,67 +39,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                    <td>1</td>
-                                    <td>Red Velvet</td>
-                                    <td>Executive</td>
-                                    <td>22 Juli 2024</td>
-                                    <td>Zilong</td>
-                                    <td>Heru</td>
-                                    <td>Perpal</td>
-                                    <td>
-                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
-                                    </td>
-                                </tr>
+                                @foreach ($dataArm as $num => $d)
                                 <tr>
-                                    <td>2</td>
-                                    <td>Kenzo</td>
-                                    <td>Big Top</td>
-                                    <td>22 September 2024</td>
-                                    <td>Yanto</td>
-                                    <td>Faris</td>
-                                    <td>On Trip</td>
+                                    <td>{{ $num + 1 }}</td>
+                                    <td>{{ $d->julukan }}</td>
+                                    <td>{{ $d->kelas }}</td>
+                                    <td>{{ $d->tgl_kir }}</td>
+                                    <td>{{ $d->driver->nama_driver }}</td>
+                                    <td>{{ $d->helper->nama_helper }}</td>
+                                    <td>{{ $d->status }}</td>
                                     <td>
-                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
+                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/{{$d->id_armada}}/detail">Detail</a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Dream</td>
-                                    <td>Big Top</td>
-                                    <td>22 September 2024</td>
-                                    <td>Kunto</td>
-                                    <td>Kuyhaa</td>
-                                    <td>On Trip</td>
-                                    <td>
-                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Rangers</td>
-                                    <td>Big Top</td>
-                                    <td>22 September 2024</td>
-                                    <td>Bagas</td>
-                                    <td>Lorenzo</td>
-                                    <td>On Trip</td>
-                                    <td>
-                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>Black Pink</td>
-                                    <td>Big Top</td>
-                                    <td>22 September 2024</td>
-                                    <td>Ronaldo</td>
-                                    <td>Bimo</td>
-                                    <td>On Trip</td>
-                                    <td>
-                                        <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/detail">Detail</a>
-                                    </td>
-                                </tr>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <div class="container">

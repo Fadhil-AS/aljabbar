@@ -5,6 +5,7 @@ use App\Http\Controllers\bergabungController;
 use App\Http\Controllers\helperController;
 use App\Http\Controllers\driverController;
 use App\Http\Controllers\armadaController;
+use App\Http\Controllers\berandaController;
 use App\Http\Controllers\loginController;
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,10 @@ Route::post('/bergabung/posts', [bergabungController::class, 'store'])->name('po
 Route::get('/admin', function () {
     return view('admin.beranda');
 });
+
+//beranda
+Route::get('/admin', [berandaController::class, 'index'])->name('admin');
+
 
 // helper
 Route::get('/admin/helper', [helperController::class, 'index'])->name('admin.helper');
