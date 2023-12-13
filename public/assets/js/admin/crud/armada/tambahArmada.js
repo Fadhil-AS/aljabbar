@@ -9,7 +9,7 @@ function tambahArmada() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            $('#form-tambah-armada').submit();
             Swal.fire('Berhasil', 'Data berhasil ditambahkan!', 'success');
         }
     });

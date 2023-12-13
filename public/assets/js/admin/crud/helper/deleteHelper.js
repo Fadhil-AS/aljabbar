@@ -1,4 +1,4 @@
-function hapusHelper() {
+function hapusHelper(idHlp) {
     event.preventDefault();
     Swal.fire({
         title: 'Konfirmasi hapus helper',
@@ -9,7 +9,7 @@ function hapusHelper() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            $(`#formDeleteHlp-${idHlp}`).submit();
             Swal.fire('Berhasil', 'Data berhasil dihapus!', 'success');
         }
     });

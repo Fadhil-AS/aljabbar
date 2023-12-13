@@ -1,4 +1,4 @@
-function hapusDriver() {
+function hapusDriver(idDriver) {
     event.preventDefault();
     Swal.fire({
         title: 'Konfirmasi hapus driver',
@@ -9,7 +9,8 @@ function hapusDriver() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            // $('.form-valid').submit();
+            $(`#form-hapus-driver-${idDriver}`).submit();
             Swal.fire('Berhasil', 'Data berhasil dihapus!', 'success');
         }
     });

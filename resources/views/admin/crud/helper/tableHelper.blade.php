@@ -22,10 +22,10 @@
                       <li><a class="dropdown-item" href="/admin/helper/{{$d->id_helper}}/detail"><i class="fa-regular fa-eye"></i> Lihat</a></li>
                       <li><a class="dropdown-item" href="/admin/helper/{{$d->id_helper}}/edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
                       <li>
-                            <form class="form-valid" action="/admin/helper/delete/{{ $d->id_helper }}" method="POST">
+                            <form class="form-valid" action="/admin/helper/delete/{{ $d->id_helper }}" method="POST" id="formDeleteHlp-{{$d->id_helper}}">
                                 @csrf
                                 @method('DELETE')
-                                <button class="dropdown-item" type="submit" id="id_helper" onclick="hapusHelper()"><i class="fa-solid fa-trash"></i> Hapus</button>
+                                <button class="dropdown-item" type="submit" id="id_helper" onclick="hapusHelper('{{ $d->id_helper }}')"><i class="fa-solid fa-trash"></i> Hapus</button>
                             </form>
 
                       </li>

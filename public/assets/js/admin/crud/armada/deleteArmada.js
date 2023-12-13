@@ -1,4 +1,4 @@
-function hapusArmada() {
+function hapusArmada(idArmada) {
     event.preventDefault();
     Swal.fire({
         title: 'Konfirmasi hapus armada',
@@ -9,7 +9,7 @@ function hapusArmada() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            $(`#form-hapus-armada-${idArmada}`).submit();
             Swal.fire('Berhasil', 'Data berhasil dihapus!', 'success');
         }
     });

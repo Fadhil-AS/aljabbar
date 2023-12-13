@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form action="{{route('post.helper')}}" method="POST" class="form-valid" enctype="multipart/form-data">
+                    <form action="{{route('post.helper')}}" method="POST" class="form-valid" enctype="multipart/form-data" id="formTambahHlp">
                         @csrf
                         <div class="row pb-3">
                             <div class="col-md-4">

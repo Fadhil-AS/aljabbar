@@ -9,7 +9,8 @@ function tambahDriver() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            // $('.form-valid').submit();
+            $('#form-tambah-driver').submit();
             Swal.fire('Berhasil', 'Data berhasil ditambahkan!', 'success');
         }
     });

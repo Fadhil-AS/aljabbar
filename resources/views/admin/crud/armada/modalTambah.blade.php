@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
-                    <form action="{{route('post.armada')}}" method="post" class="form-valid" enctype="multipart/form-data">
+                    <form id="form-tambah-armada" action="{{route('post.armada')}}" method="post" class="form-valid" enctype="multipart/form-data">
                         @csrf
                         <div class="row pb-3">
                             <div class="col-md-4">

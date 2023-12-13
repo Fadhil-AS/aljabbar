@@ -24,10 +24,10 @@
                     <li><a class="dropdown-item" href="/admin/driver/{{$d->id_driver}}/detail"><i class="fa-regular fa-eye"></i> Lihat</a></li>
                     <li><a class="dropdown-item" href="/admin/driver/{{$d->id_driver}}/edit"><i class="fa-regular fa-pen-to-square"></i> Edit</a></li>
                     <li>
-                      <form class="form-valid" action="/admin/driver/delete/{{ $d->id_driver }}" method="POST">
+                      <form id="form-hapus-driver-{{ $d->id_driver }}" class="form-valid" action="/admin/driver/delete/{{ $d->id_driver }}" method="POST">
                           @csrf
                           @method('DELETE')
-                          <button class="dropdown-item" type="submit" id="id_driver" onclick="hapusDriver()"><i class="fa-solid fa-trash"></i> Hapus</button>
+                          <button class="dropdown-item" type="submit" id="id_driver" onclick="hapusDriver('{{ $d->id_driver }}')"><i class="fa-solid fa-trash"></i> Hapus</button>
                       </form>
 
                 </li>

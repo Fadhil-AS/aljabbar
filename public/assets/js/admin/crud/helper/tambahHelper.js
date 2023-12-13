@@ -9,7 +9,7 @@ function tambahHelper() {
         cancelButtonText: 'Batal'
     }).then((result) => {
         if (result.isConfirmed) {
-            $('.form-valid').submit();
+            $('#formTambahHlp').submit();
             Swal.fire('Berhasil', 'Data berhasil ditambahkan!', 'success');
         }
     });
