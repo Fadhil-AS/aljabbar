@@ -1,5 +1,5 @@
 <div class="main-container d-flex">
-  @include('partials.admin.sidebar')
+  @include('partials.admin.sidebar', ['dataAdmin' => $dataAdmin])
   <div class="content">
       <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg">
           <div class="container-fluid">

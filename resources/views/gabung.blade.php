@@ -9,7 +9,7 @@
             <div class="card border-0 shadow border-radius">
                 <h2 class="text-center pt-5">Masukkan Data Diri</h2>
                 <div class="card-body">
-                    <form action="{{ route('posts.gabung') }}" method="POST" class="form-valid">
+                    <form action="{{ route('posts.gabung') }}" method="POST" class="form-valid" enctype="multipart/form-data">
                         {{-- @method('POST') --}}
                         @csrf
                         <div class="row pt-5">
@@ -32,30 +32,40 @@
                         </div>
                         <div class="row pt-5">
                             <div class="col-md-4">
-                                <label for="inputPerusahaan" class="form-label">Nama Perusahaan</label>
-                                <input type="text" name="nama_perusahaan" id="inputPerusahaan" class="form-control" required>
+                                <label for="inputPerusahaan" class="form-label">Nama PT</label>
+                                <input type="text" name="nama_pt" id="inputPerusahaan" class="form-control" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputjabatan" class="form-label">Jabatan pekerjaan</label>
-                                <input type="text" name="jabatan_pekerjaan" id="inputJabatan" class="form-control" required>
+                                <label for="inputjabatan" class="form-label">Nama PO</label>
+                                <input type="text" name="nama_po" id="inputJabatan" class="form-control" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputTelephone" class="form-label">Nomor Telephone</label>
-                                <input type="number" name="telepon" id="inputTelephone" class="form-control" required>
+                                <label for="inputTelephone" class="form-label">Jabatan Pekerjaan</label>
+                                <input type="text" name="jabatan_pekerjaan" id="inputTelephone" class="form-control" required>
                             </div>
                         </div>
                         <div class="row pt-5">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <label for="inputJumlahKendaraan" class="form-label">Jumlah Kendaraan</label>
                                 <input type="number" name="jumlah_kendaraan" id="inputJumlahKendaraan" class="form-control" required>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <label for="inputJumlahKendaraan" class="form-label">Nomor Telepon</label>
+                                <input type="number" name="telepon" id="inputJumlahKendaraan" class="form-control" required>
+                            </div>
+                            <div class="col-md-4">
                                 <label for="inputJenisBus" class="form-label">Jenis Bus</label>
                                 <select name = "jenis_bus" id="inputJenisBus" class="form-select" required>
                                     <option selected >Choose...</option>
                                     <option>Pariwisata</option>
                                     <option>Reguler</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="row pt-5">
+                            <div class="col-md-4">
+                                <label for="foto_profil" class="form-label">Foto Profil :</label>
+                                <input type="file" name="foto_profil" id="foto_profil" class="form-control" required>
                             </div>
                         </div>
                         <div class="row pt-5">
