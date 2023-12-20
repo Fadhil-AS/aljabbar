@@ -17,7 +17,7 @@
       <tr>
           <td>{{ $num + 1 }}</td>
           <td>{{ $d->nomor_body }}</td>
-          <td>{{ $d->plat_nomor }}</td>
+          <td>{{ $d->plat_depan . ' ' . $d->nomor_plat . ' ' . $d->plat_belakang }}</td>
           <td>{{ $d->kapasitas_kursi }}</td>
           <td>{{ $d->kelas }}</td>
           <td>{{ $d->tgl_kir }}</td>

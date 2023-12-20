@@ -16,5 +16,6 @@ class berandaController extends Controller
         $dataHlp = helperModel::all();
 
         return view('admin.beranda', compact('dataArm', 'dataDrv', 'dataHlp' ));
+        // sssss
     }
 }

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('tbarmada', function (Blueprint $table) {
             $table->increments('id_armada');
-            $table->string('plat_nomor');
+            $table->string('plat_depan');
+            $table->integer('nomor_plat');
+            $table->string('plat_belakang');
             $table->date('tgl_kir');
             $table->string('julukan');
             $table->string('kelas');

@@ -37,7 +37,9 @@ class armadaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'plat_nomor' => 'required', 
+            'plat_depan' => 'required', 
+            'nomor_plat' => 'required', 
+            'plat_belakang' => 'required', 
             'tgl_kir' => 'required', 
             'julukan' => 'required', 
             'kelas' => 'required', 
@@ -52,7 +54,9 @@ class armadaController extends Controller
         // $fotopath = $request->input('foto_profile');
 
         $armada = new armadaModel([
-            'plat_nomor' => $request->input('plat_nomor'), 
+            'plat_depan' => $request->input('plat_depan'), 
+            'nomor_plat' => $request->input('nomor_plat'), 
+            'plat_belakang' => $request->input('plat_belakang'), 
             'tgl_kir' => $request->input('tgl_kir'), 
             'julukan' => $request->input('julukan'), 
             'kelas' => $request->input('kelas'), 
@@ -125,7 +129,9 @@ class armadaController extends Controller
     {
         $dataArm = armadaModel::with(['driver', 'helper'])->find($id_armada);
         $request->validate([
-            'plat_nomor' => 'required', 
+            'plat_depan' => 'required', 
+            'nomor_plat' => 'required', 
+            'plat_belakang' => 'required', 
             'tgl_kir' => 'required', 
             'julukan' => 'required', 
             'kelas' => 'required', 
@@ -139,7 +145,9 @@ class armadaController extends Controller
 
         $file = request()->file('foto_armada') ? request()->file('foto_armada')->store('post-image', 'public') : null;
         armadaModel::where('id_armada', $dataArm->id_armada)->update([
-            'plat_nomor' => $request->input('plat_nomor'), 
+            'plat_depan' => $request->input('plat_depan'), 
+            'nomor_plat' => $request->input('nomor_plat'), 
+            'plat_belakang' => $request->input('plat_belakang'), 
             'tgl_kir' => $request->input('tgl_kir'), 
             'julukan' => $request->input('julukan'), 
             'kelas' => $request->input('kelas'), 

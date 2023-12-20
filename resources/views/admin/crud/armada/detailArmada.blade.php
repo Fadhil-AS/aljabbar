@@ -15,7 +15,7 @@
                     <div class="card-body mt-4">
                         <h1>{{$dataArm->nomor_body}}</h1>
                         <h5>{{$dataArm->julukan}}</h5>
-                        <h5>{{$dataArm->plat_nomor}}</h5>
+                        <h5>{{$dataArm->plat_depan . ' ' . $dataArm->nomor_plat . ' ' . $dataArm->plat_belakang}}</h5>
                     </div>
                 </div>
                 <div class="col-md-3">

@@ -14,6 +14,11 @@ $(function (){
         }
     }
 
+    validator.validator.nik = function(el, event){
+        if($(el).is('[name=nik]') && $(el).val().length != 16){
+            return 'NIK tidak valid';
+        }
+    }
     //check form without submit
     // validator.checkAll(); //return error count
 

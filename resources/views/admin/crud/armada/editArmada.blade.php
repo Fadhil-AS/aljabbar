@@ -24,17 +24,26 @@
                             @method('PUT')
                             <div class="row pb-3">
                                 <div class="col-md-4">
-                                    <input type="number" name="nomorArmada" id="id_armada" hidden>
-                                    <label for="plat_nomor" class="form-label">Plat nomor:</label>
-                                    <input type="text" name="plat_nomor" id="plat_nomor" value="{{ $dataArm->plat_nomor }}" class="form-control" required>
+                                    <label for="plat_depan" class="form-label">Plat depan:</label>
+                                    <input type="text" name="plat_depan" id="plat_depan" class="form-control text-center" value="{{ $dataArm->plat_depan }}"required>
                                 </div>
+                                <div class="col-md-4">
+                                    <label for="nomor_plat" class="form-label">Nomor plat:</label>
+                                    <input type="text" name="nomor_plat" id="nomor_plat" class="form-control text-center" value="{{ $dataArm->nomor_plat }}" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="plat_belakang" class="form-label">Plat belakang:</label>
+                                    <input type="text" name="plat_belakang" id="plat_belakang" class="form-control text-center" value="{{ $dataArm->plat_belakang }}" required>
+                                </div>
+                            </div>
+                            <div class="row pb-3">
                                 <div class="col-md-4">
                                     <label for="nomor_body" class="form-label">No Body:</label>
-                                    <input type="text" name="nomor_body" id="nomor_body" value="{{ $dataArm->nomor_body }}" class="form-control" required>
+                                    <input type="text" name="nomor_body" id="nomor_body" class="form-control" value="{{ $dataArm->nomor_body }}" required>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-8">
                                     <label for="foto_armada" class="form-label">Foto Armada :</label>
-                                    <input type="file" name="foto_armada" id="foto_armada" class="form-control" required>
+                                    <input type="file" name="foto_armada" id="foto_armada" class="form-control mb-1" required>
                                     <img src="{{asset('storage/'. $dataArm->foto_armada)}}" alt="" style="width: 250px; height:250px;">
                                 </div>
                             </div>
@@ -141,7 +150,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emretulek/jbvalidator"></script>
 
     {{-- js --}}
-    <script src="{{ asset('assets/js/admin/crud/helper/editHelper.js') }}"></script>
+    <script src="{{ asset('assets/js/admin/crud/armada/editArmada.js') }}"></script>
 
     {{-- SweetAlert --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>

@@ -12,7 +12,7 @@ class armadaModel extends Model
     use HasFactory;
     protected $table = 'tbarmada';
     protected $primaryKey = 'id_armada';
-    protected $fillable = ['plat_nomor', 'tgl_kir', 'julukan', 'kelas', 'foto_armada', 'jarak_tempuh', 'kapasitas_kursi', 'nomor_body', 'status', 'tempat_awal', 'tempat_akhir', 'jam_keberangkatan', 'tanggal_keberangkatan','id_driver', 'id_helper'];
+    protected $fillable = ['plat_depan', 'nomor_plat', 'plat_belakang', 'tgl_kir', 'julukan', 'kelas', 'foto_armada', 'jarak_tempuh', 'kapasitas_kursi', 'nomor_body', 'status', 'tempat_awal', 'tempat_akhir', 'jam_keberangkatan', 'tanggal_keberangkatan','id_driver', 'id_helper'];
 
     // Relasi ke tbhelper
     public function helper()
