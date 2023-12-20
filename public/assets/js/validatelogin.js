@@ -1,5 +1,5 @@
 $(function (){
-    let validator = $('form.form-valid').jbvalidator({
+    let validator = $('form.form1').jbvalidator({
         errorMessage: true,
         successClass: true,
         language: "https://emretulek.github.io/jbvalidator/dist/lang/en.json"
@@ -11,12 +11,6 @@ $(function (){
             if (!email.includes('@') || email.split('@')[1].length < 2) {
                 return 'Email harus memiliki domain yang valid';
             }
-        }
-    }
-
-    validator.validator.example = function(el, event){
-        if($(el).is('[name=password]') && $(el).val().length < 8){
-            return 'Password anda tidak valid';
         }
     }
 

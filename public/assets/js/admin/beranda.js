@@ -1,29 +1,18 @@
-
- // ambil elemen canvas
- var ctx = document.getElementById('donutChart').getContext('2d');
-
- // tentukan data chart
- var data = {
-   labels: ['Armada On trip', 'Armada Perpal'],
-   datasets: [{
-     data: [4,1],
-     backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-   }]
- };
-
-// buat configurasi chart
+// config chart
 var config = {
-    type: 'doughnut',
-    data: data,
-    options: {
-      responsive: true
+  type: 'doughnut',
+  data: {
+    labels: labels,
+    datasets: [{
+      data: data,
+      backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+    }]
+  }
+};
 
-    }
-
-  };
-// buat donut chart
-var myDonutChart = new Chart(ctx, config);
-
+// render chart
+var ctx = document.getElementById('donutChart').getContext('2d');
+new Chart(ctx, config);
 
 $(document).ready( function () {
     $('#dataBeranda').DataTable();

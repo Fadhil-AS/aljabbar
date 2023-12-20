@@ -10,7 +10,7 @@
                 <div class="mt-4 text-center">
                     <h3><a href="/" class="link-underline link-underline-opacity-0 text-dark">Transport Berkah Armada</a></h3>
                 </div>
-                <form action="/login" class="form-valid" method="POST">
+                <form action="/login" class="form1" method="POST">
                     @csrf
 
                     @if (session()->has('loginError'))

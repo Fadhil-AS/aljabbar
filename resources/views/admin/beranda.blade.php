@@ -23,7 +23,7 @@
                         <h3>Beranda</h3>
                     </div>
                     {{-- <a class="btn btn-success float-end mb-3" href="#"><i class="fa-solid fa-plus"></i> Tambah</a> --}}
-
+                    
                     <div class="card-item mt-3">
                         <table id="dataBeranda" class="display table " width="100%">
                             <thead class="table-dark">
@@ -71,7 +71,11 @@
         </div>
     </div>
 
-
+    <script>
+        var labels = @json($armadaStatuses->pluck('status'));
+        var data = @json($armadaStatuses->pluck('jumlah')); 
+    </script>
+        
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0/dist/chart.min.js"></script>
