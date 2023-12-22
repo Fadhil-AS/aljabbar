@@ -1,7 +1,7 @@
 @extends('layouts.admin.mainAdmin')
 
 @section('containAdmin')
-    <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/helper" class="text-none align-middle text-dark">Driver</a> <span class="text-secondary">/</span> <a href="/admin/detailHelper" class="text-none align-middle text-dark">Detail Driver</a> </p>
+    <p class="card-text ms-3 mt-3"><a href="#" class="text-none align-middle text-dark">Admin</a> <span class="text-secondary">/</span> <a href="/admin/driver" class="text-none align-middle text-dark">Driver</a> <span class="text-secondary">/</span> <a href="/admin/detailHelper" class="text-none align-middle text-dark">Detail Driver</a> </p>
     <div class="container">
         <div class="card mb-3 border-0 shadow" style="max-width: 100%;">
             <div class="row g-0">

@@ -12,6 +12,7 @@ use App\Http\Controllers\armadaController;
 use App\Http\Controllers\driverController;
 use App\Http\Controllers\berandaController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\homeKeuanganController;
 
 
 /*
@@ -29,7 +30,7 @@ use App\Http\Controllers\loginController;
 Route::get('/', [homepageController::class, 'index']);
 Route::get('/monitor', [monitorArmadaController::class, 'indexMonitor']);
 Route::get('/pengingat', [pengingatController::class, 'indexPengingat']);
-Route::get('/keuangan', [keuanganController::class, 'indexKeuangan']);
+Route::get('/keuangan', [homeKeuanganController::class, 'indexKeuangan']);
 Route::get('/selengkapnya', [selengkapnyaController::class, 'indexSelengkapnya']);
 
 // login system

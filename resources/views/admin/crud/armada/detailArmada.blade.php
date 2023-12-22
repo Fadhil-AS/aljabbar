@@ -40,11 +40,7 @@
                             <i class="fa-regular fa-user ikon"></i><h4>{{ $dataHlp->nama_helper }}</h4>
                         </div>
                         <div>
-                            <form action="/admin/armada/{{$dataArm->id_armada}}/edit" method="GET">
-                                <button type="submit" class="btn btn-success" style="background-color: #47a992">
-                                    <i class="fa-regular fa-pen-to-square"></i> Edit
-                                </button>
-                            </form>
+                            <a class="btn btn-success border border-0" href="/admin/armada/{{$dataArm->id_armada}}/edit" style="background-color: #47a992"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
                         </div>
                     </div>
                 </div>
@@ -104,7 +100,7 @@
                                             <td>Rp{{ number_format($keuangan->jumlah, 0, ',', '.') }}</td>
                                             <td>{{ $keuangan->jam }}, {{ $keuangan->tanggal }}</td>
                                             <td>
-                                                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#buktiModal{{ $keuangan->id }}" style="background-color: #47a992" type="button" aria-expanded="false">
+                                                <a class="btn btn-success border border-0" data-bs-toggle="modal" data-bs-target="#buktiModal{{ $keuangan->id }}" style="background-color: #47a992" type="button" aria-expanded="false">
                                                 Bukti
                                                 <i class="fa-regular fa-eye"></i></a>
                                             </td>
