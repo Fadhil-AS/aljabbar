@@ -37,35 +37,35 @@ class armadaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'plat_nomor' => 'required', 
-            'tgl_kir' => 'required', 
-            'julukan' => 'required', 
-            'kelas' => 'required', 
-            'foto_armada' => 'required', 
-            'jarak_tempuh' => 'required', 
-            'kapasitas_kursi' => 'required', 
+            'plat_nomor' => 'required',
+            'tgl_kir' => 'required',
+            'julukan' => 'required',
+            'kelas' => 'required',
+            'foto_armada' => 'required',
+            'jarak_tempuh' => 'required',
+            'kapasitas_kursi' => 'required',
             'nomor_body' => 'required',
-            'id_driver' => 'required', 
+            'id_driver' => 'required',
             'id_helper' => 'required'
         ]);
 
         // $fotopath = $request->input('foto_profile');
 
         $armada = new armadaModel([
-            'plat_nomor' => $request->input('plat_nomor'), 
-            'tgl_kir' => $request->input('tgl_kir'), 
-            'julukan' => $request->input('julukan'), 
-            'kelas' => $request->input('kelas'), 
+            'plat_nomor' => $request->input('plat_nomor'),
+            'tgl_kir' => $request->input('tgl_kir'),
+            'julukan' => $request->input('julukan'),
+            'kelas' => $request->input('kelas'),
             'foto_armada' => $request->file('foto_armada')->store('post-image', 'public'),
-            'jarak_tempuh' => $request->input('jarak_tempuh'), 
-            'kapasitas_kursi' => $request->input('kapasitas_kursi'), 
+            'jarak_tempuh' => $request->input('jarak_tempuh'),
+            'kapasitas_kursi' => $request->input('kapasitas_kursi'),
             'nomor_body' => $request->input('nomor_body'),
             'status' => $request->input('status'),
             'tempat_awal' => $request->input('tempat_awal'),
             'tempat_akhir' => $request->input('tempat_akhir'),
             'jam_keberangkatan' => $request->input('jam_keberangkatan'),
             'tanggal_keberangkatan' => $request->input('tanggal_keberangkatan'),
-            'id_driver' => $request->input('id_driver'), 
+            'id_driver' => $request->input('id_driver'),
             'id_helper' => $request->input('id_helper')
         ]);
 
@@ -88,7 +88,7 @@ class armadaController extends Controller
         // }
 
         // return view('admin.crud.armada.detailArmada', ['dataArm' => $dataArm]);
-        $dataArm = armadaModel::with(['driver', 'helper'])->find($id_armada);
+        $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id_armada);
 
         if (!$dataArm) {
             abort(404);
@@ -125,34 +125,34 @@ class armadaController extends Controller
     {
         $dataArm = armadaModel::with(['driver', 'helper'])->find($id_armada);
         $request->validate([
-            'plat_nomor' => 'required', 
-            'tgl_kir' => 'required', 
-            'julukan' => 'required', 
-            'kelas' => 'required', 
-            'foto_armada' => 'required', 
-            'jarak_tempuh' => 'required', 
-            'kapasitas_kursi' => 'required', 
+            'plat_nomor' => 'required',
+            'tgl_kir' => 'required',
+            'julukan' => 'required',
+            'kelas' => 'required',
+            'foto_armada' => 'required',
+            'jarak_tempuh' => 'required',
+            'kapasitas_kursi' => 'required',
             'nomor_body' => 'required',
-            'id_driver' => 'required', 
+            'id_driver' => 'required',
             'id_helper' => 'required'
         ]);
 
         $file = request()->file('foto_armada') ? request()->file('foto_armada')->store('post-image', 'public') : null;
         armadaModel::where('id_armada', $dataArm->id_armada)->update([
-            'plat_nomor' => $request->input('plat_nomor'), 
-            'tgl_kir' => $request->input('tgl_kir'), 
-            'julukan' => $request->input('julukan'), 
-            'kelas' => $request->input('kelas'), 
+            'plat_nomor' => $request->input('plat_nomor'),
+            'tgl_kir' => $request->input('tgl_kir'),
+            'julukan' => $request->input('julukan'),
+            'kelas' => $request->input('kelas'),
             'foto_armada' => $request->file('foto_armada')->store('post-image', 'public'),
-            'jarak_tempuh' => $request->input('jarak_tempuh'), 
-            'kapasitas_kursi' => $request->input('kapasitas_kursi'), 
+            'jarak_tempuh' => $request->input('jarak_tempuh'),
+            'kapasitas_kursi' => $request->input('kapasitas_kursi'),
             'nomor_body' => $request->input('nomor_body'),
             'status' => $request->input('status'),
             'tempat_awal' => $request->input('tempat_awal'),
             'tempat_akhir' => $request->input('tempat_akhir'),
             'jam_keberangkatan' => $request->input('jam_keberangkatan'),
             'tanggal_keberangkatan' => $request->input('tanggal_keberangkatan'),
-            'id_driver' => $request->input('id_driver'), 
+            'id_driver' => $request->input('id_driver'),
             'id_helper' => $request->input('id_helper')
         ]);
         return redirect()->route('admin.armada');

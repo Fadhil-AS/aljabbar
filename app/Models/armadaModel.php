@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\helperModel;
 use App\Models\driverModel;
+use App\Models\keuanganAdminModel;
 
 class armadaModel extends Model
 {
@@ -24,5 +25,10 @@ class armadaModel extends Model
     public function driver()
     {
         return $this->belongsTo(driverModel::class, 'id_driver', 'id_driver');
+    }
+
+    public function keuangan()
+    {
+        return $this->hasMany(keuanganAdminModel::class, 'id_armada');
     }
 }

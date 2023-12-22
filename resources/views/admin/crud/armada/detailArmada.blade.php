@@ -15,7 +15,7 @@
                     <div class="card-body mt-4">
                         <h1>{{$dataArm->nomor_body}}</h1>
                         <h5>{{$dataArm->julukan}}</h5>
-                        <h5>{{$dataArm->plat_nomor}}</h5>
+                        <h5>{{$dataArm->plat_depan . ' ' . $dataArm->nomor_plat . ' ' . $dataArm->plat_belakang}}</h5>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -97,38 +97,58 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Solar</td>
-                                        <td>Rp1.000.000</td>
-                                        <td>10.00, 02 Nov 2023</td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-success dropdown-toggle" style="background-color: #47a992" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    @foreach($dataArm->keuangan as $num => $keuangan)
+                                        <tr>
+                                            <td>{{ $num + 1 }}</td>
+                                            <td>{{ $keuangan->jenis}}</td>
+                                            <td>Rp{{ number_format($keuangan->jumlah, 0, ',', '.') }}</td>
+                                            <td>{{ $keuangan->jam }}, {{ $keuangan->tanggal }}</td>
+                                            <td>
+                                                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#buktiModal{{ $keuangan->id }}" style="background-color: #47a992" type="button" aria-expanded="false">
                                                 Bukti
-                                                </button>
+                                                <i class="fa-regular fa-eye"></i></a>
+                                            </td>
+                                        </tr>
+                                        <div class="modal fade" id="buktiModal{{ $keuangan->id }}" tabindex="-1" aria-labelledby="buktiModalLabel{{ $keuangan->id }}" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="buktiModalLabel{{ $keuangan->id }}">Bukti Transaksi {{ $keuangan->jenis }}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="{{ asset('storage/' . $keuangan->foto_bukti) }}" alt="Bukti Pengeluaran" class="w-100">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>E-Toll</td>
-                                        <td>Rp1.000.000</td>
-                                        <td>10.00, 02 Nov 2023</td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-success dropdown-toggle" style="background-color: #47a992" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                Bukti
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
+            {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Bukti Transaksi {{  }}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      {{ ... }}
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div> --}}
         </div>
     {{-- </div> --}}
 

@@ -11,7 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('tbkeuangan', function (Blueprint $table) {
+            $table->increments('id_keuangan');
+            $table->string('jenis');
+            $table->integer('jumlah');
+            $table->string('foto_bukti');
+            $table->time('jam');
+            $table->date('tanggal');
+            $table->unsignedInteger('id_armada');
+            $table->foreign('id_armada')->references('id_armada')->on('tbarmada');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('tbkeuangan');
     }
 };
