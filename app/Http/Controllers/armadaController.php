@@ -92,7 +92,7 @@ class armadaController extends Controller
         // }
 
         // return view('admin.crud.armada.detailArmada', ['dataArm' => $dataArm]);
-        $dataArm = armadaModel::with(['driver', 'helper'])->find($id_armada);
+        $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id_armada);
 
         if (!$dataArm) {
             abort(404);
