@@ -63,7 +63,7 @@ return new class extends Migration
                 'text' => 'Fitur Grafik Keuangan membantu menampilkan grafik keuangan armada',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ]);
     }

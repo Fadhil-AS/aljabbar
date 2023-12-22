@@ -63,7 +63,7 @@ return new class extends Migration
                 'text' => 'Fitur GPS membantu menampilkan letak keberadaan driver',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ]);
     }

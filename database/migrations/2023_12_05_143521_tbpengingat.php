@@ -19,7 +19,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table('tbhomekeuangan')->insert([
+        DB::table('tbpengingat')->insert([
             [
                 'id'=> '1',
                 'imageurl' => 'https://images.unsplash.com/photo-1546955870-9fc9e5534349?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -90,7 +90,7 @@ return new class extends Migration
                 'text' => 'Armada terjaga prima dengan fitur Vehicle Management yang mengirim notifikasi perawatan berkala bagi kendaraan. Fitur License Reminder juga mengingatkan waktu dokumen kendaraan yang akan jatuh tempo.',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ]);
     }

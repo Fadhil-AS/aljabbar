@@ -54,7 +54,7 @@ return new class extends Migration
                 'text' => 'Fitur manajemen keuangan mencatat semua pengeluaran armada seperti biaya bahan bakar, servis berkala, tol, parkir dan biaya operasional lainnya. Laporan keuangan terperinci dihasilkan untuk membantu analisis dan mengontrol biaya operasional.',
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
+            ]
 
         ]);
     }
