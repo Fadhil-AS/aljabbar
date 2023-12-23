@@ -16,25 +16,9 @@ class HelperTest extends TestCase
     /**
      * A basic unit test example.
      */
-    public function test_example(): void
-    {
-        $this->assertTrue(true);
-    }
-
-    // public function testCreateHelper(){
-    //     $helper = helperModel::factory()->create();;
-
-    //     $response = $this->actingAs($helper)->json('POST','/admin/helper/posts', [
-    //         '_token' => csrf_token(),
-    //         'nama_helper' => 'Muhammad Fadhil Ardiansyah Supiyan',
-    //         'email' => 'mfadhilardiansyahs@example.com',
-    //         'tgl_lahir' => '2002-09-12',
-    //         'foto_profile' => '3SkaS2RSdYy9qRVpcfWuivHqWqMPLZqDWkoDRdoe.png',
-    //         'nik' => '1',
-    //     ]);
-
-    //     $response->assertStatus(201);
-    //     $this->assertDatabaseHas('tbhelper', ['nama_helper' => 'Muhammad Fadhil Ardiansyah Supiyan']);
+    // public function test_example(): void
+    // {
+    //     $this->assertTrue(true);
     // }
 
     public function testStore(){
@@ -60,5 +44,16 @@ class HelperTest extends TestCase
         ]);
 
         Storage::disk('public')->assertExists('post-image/' . $file->hashName());
+    }
+
+    public function testDestroy(){
+        $helper = helperModel::factory()->create();
+        $response = $this->delete(route('destroy.helper', ['id' => $helper->id_helper]));
+        $response->assertRedirect(route('admin.helper'));
+
+        $this->assertDatabaseMissing('tbhelper', [
+            'id_helper' => $helper->id_helper
+        ]);
+
     }
 }

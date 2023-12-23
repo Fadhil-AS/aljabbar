@@ -36,7 +36,7 @@ class helperController extends Controller
             'email' => 'required|email',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|digits:16',
         ]);
 
         // $fotopath = $request->input('foto_profile');
@@ -90,7 +90,7 @@ class helperController extends Controller
             'email' => 'required|email',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
-            'nik' => 'required',
+            'nik' => 'required|digits:16',
         ]);
 
         $file = request()->file('foto_profile') ? request()->file('foto_profile')->store('post-image', 'public') : null;
