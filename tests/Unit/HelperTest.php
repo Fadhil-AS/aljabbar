@@ -12,7 +12,7 @@ use Illuminate\Http\UploadedFile;
 
 class HelperTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
     /**
      * A basic unit test example.
      */
