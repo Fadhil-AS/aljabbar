@@ -85,12 +85,6 @@ class armadaController extends Controller
      */
     public function show(string $id_armada)
     {
-        // $dataArm = armadaModel::with(['driver', 'helper'])->where('id_armada', $id_armada)->first();
-
-        // if(!$dataArm){
-        //     abort(404);
-        // }
-
         // return view('admin.crud.armada.detailArmada', ['dataArm' => $dataArm]);
         $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id_armada);
 
