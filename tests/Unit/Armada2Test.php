@@ -2,130 +2,51 @@
 
 namespace Tests\Unit;
 
-use App\Http\Controllers\armadaController;
-use Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+// use PHPUnit\Framework\TestCase;
+
 use App\Models\armadaModel;
-use App\Models\driverModel;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\WithFaker;
 use App\Models\helperModel;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\File;
-
+use App\Models\bergabungModel;
+use App\Models\driverModel;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Collection;
 
 class Armada2Test extends TestCase
 {
     /**
-     * A basic test example.
+     * A basic feature test example.
      */
-    public function testEditArmada(){
-        // Mock the armadaModel, driverModel, and helperModel
-        $armadaModelMock = $this->getMockBuilder(armadaModel::class)
-            ->onlyMethods(['with', 'find']) // Corrected: Remove 'find' if it doesn't exist
-            ->getMock();
-
-        $driverModelMock = $this->getMockBuilder(driverModel::class)
-            ->onlyMethods(['all'])
-            ->getMock();
-
-        $helperModelMock = $this->getMockBuilder(helperModel::class)
-            ->onlyMethods(['all'])
-            ->getMock();
-
-        // Assume $id exists for testing purposes
-        $id = 1;
-
-        // Mock the data returned by the models
-        $dataArmMock = new \stdClass();
-        $dataDrvMock = [/* Mocked driver data */];
-        $dataHlpMock = [/* Mocked helper data */];
-
-        // Set up expectations for the method calls
-        $armadaModelMock->expects($this->once())
-            ->method('with')
-            ->with(['driver', 'helper', 'keuangan'])
-            ->willReturnSelf();
-
-        $armadaModelMock->expects($this->once())
-            ->method('find')
-            ->with($id)
-            ->willReturn($dataArmMock);
-
-        $driverModelMock->expects($this->once())
-            ->method('all')
-            ->willReturn($dataDrvMock);
-
-        $helperModelMock->expects($this->once())
-            ->method('all')
-            ->willReturn($dataHlpMock);
-
-        // Create an instance of the controller with mocked models
-        $controller = new armadaController($armadaModelMock, $driverModelMock, $helperModelMock);
-
-        // Call the edit function with the mocked models
-        $response = $controller->edit($id);
-
-        // Assertions
-        $this->assertEquals(view('admin.crud.armada.editArmada', ['dataArm' => $dataArmMock, 'dataDrv' => $dataDrvMock, 'dataHlp' => $dataHlpMock]), $response);
-
-
-    }
-
-    public function testDestroyArmada()
+    public function testShowDriver()
     {
-        // Mock the armadaModel and File
-        $armadaModelMock = $this->getMockBuilder(armadaModel::class)
-            ->onlyMethods(['with', 'where', 'first', 'destroy']) // Corrected: Remove 'where' if it doesn't exist
-            ->getMock();
+        // Assuming you already have existing data for armada, driver, and helper
+        $driver = driverModel::first();
 
-        $fileMock = $this->getMockBuilder(File::class)
-            ->onlyMethods(['exists', 'unlink'])
-            ->getMock();
+        // Hit the show endpoint with existing data
+        $response = $this->get(route('detail.driver', ['id' => $driver->id_driver]));
 
-        // Assume $id exists for testing purposes
-        $id = 1;
+        // Assert response status code
+        $response->assertStatus(200);
 
-        // Mock the data returned by the model
-        $dataArmMock = new \stdClass();
-        $dataArmMock->id_armada = $id;
-        $dataArmMock->foto_armada = 'example.jpg';
-
-        // Set up expectations for the method calls
-        $armadaModelMock->expects($this->once())
-            ->method('with')
-            ->with(['driver', 'helper'])
-            ->willReturnSelf();
-
-        $armadaModelMock->expects($this->once())
-            ->method('where')
-            ->with('id_armada', $id)
-            ->willReturnSelf();
-
-        $armadaModelMock->expects($this->once())
-            ->method('first')
-            ->willReturn($dataArmMock);
-
-        $fileMock->expects($this->once())
-            ->method('exists')
-            ->willReturn(true);
-
-        $fileMock->expects($this->once())
-            ->method('unlink')
-            ->with(\public_path('storage/example.jpg'));
-
-        $armadaModelMock->expects($this->once())
-            ->method('destroy')
-            ->with($id);
-
-        // Create an instance of the controller with mocked models
-        $controller = new armadaController($armadaModelMock, null, null, $fileMock);
-
-        // Call the destroy function with the mocked models
-        $response = $controller->destroy($id);
-
-        // Assertions
-        $this->assertInstanceOf(armadaController::class, $response);
-        $this->assertEquals(route('admin.armada'), $response->getTargetUrl());
+        // Assert that the response view has the necessary data
+        $response->assertViewHas('dataDrv', function ($dataDrv) use ($driver) {
+            return $dataDrv->id_driver === $driver->id_driver;
+        });
     }
+
+    public function testDestroy(){
+        $armada = armadaModel::first();
+        $response = $this->delete(route('destroy.armada', ['id' => $armada->id_armada]));
+        $response->assertRedirect(route('admin.armada'));
+
+        $this->assertDatabaseMissing('tbarmada', [
+            'id_armada' => $armada->id_armada
+        ]);
+
+    }
+
+    
 }

@@ -13,6 +13,7 @@ class BerandaController extends Controller
 
     public function index()
     {
+        // Lengkapi Code Berikut
         // 1. Ambil data jumlah armada per status
         $armadaStatuses = ArmadaModel::selectRaw('status, count(*) as jumlah')
                                       ->groupBy('status')

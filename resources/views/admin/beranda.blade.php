@@ -39,15 +39,16 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {{-- Lengkapi Code Berikut --}}
                                 @foreach ($dataArm as $num => $d)
                                 <tr>
                                     <td>{{ $num + 1 }}</td>
                                     <td>{{ $d->julukan }}</td>
-                                    <td>{{ $d->kelas }}</td>
-                                    <td>{{ $d->tgl_kir }}</td>
+                                    <td>{{ $d->kelas}}</td>
+                                    <td>{{ $d->tgl_kir}}</td>
                                     <td>{{ $d->driver->nama_driver }}</td>
                                     <td>{{ $d->helper->nama_helper }}</td>
-                                    <td>{{ $d->status }}</td>
+                                    <td>{{ $d->status}}</td>
                                     <td>
                                         <a type="button" class="btn btn-success" style="background-color: #47A992" href="/admin/armada/{{$d->id_armada}}/detail">Detail</a>
                                     </td>

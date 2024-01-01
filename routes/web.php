@@ -73,3 +73,6 @@ Route::get('/admin/driver/{id}/detail', [driverController::class, 'show'])->name
 Route::get('/admin/driver/{id}/edit', [driverController::class, 'edit'])->name('edit.driver');
 Route::put('/admin/driver/{id}', [driverController::class, 'update'])->name('update.driver');
 Route::delete('/admin/driver/delete/{id}', [driverController::class, 'destroy'])->name('destroy.driver');
+
+
+Route::delete('/armada/{id}', 'armadaController@destroy')->name('armada.destroy');
