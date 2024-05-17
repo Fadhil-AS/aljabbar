@@ -34,6 +34,7 @@ class driverController extends Controller
         $request->validate([
             'nama_driver' => 'required|string|max:255',
             'email' => 'required|email',
+            'password' => 'required',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
             'nik' => 'required',
@@ -45,6 +46,7 @@ class driverController extends Controller
         $driver = new driverModel([
             'nama_driver' => $request->input('nama_driver'),
             'email' => $request->input('email'),
+            'password' => $request->input('password'),
             'tgl_lahir' => $request->input('tgl_lahir'),
             'foto_profile' => $request->file('foto_profile')->store('post-image', 'public'),
             'nik' => $request->input('nik'),
@@ -90,6 +92,7 @@ class driverController extends Controller
         $request->validate([
             'nama_driver' => 'required|string|max:255',
             'email' => 'required|email',
+            'password' => 'required',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
             'nik' => 'required',
@@ -100,6 +103,7 @@ class driverController extends Controller
         driverModel::where('id_driver', $dataDrv->id_driver)->update([
             'nama_driver' => $request['nama_driver'],
             'email' => $request['email'],
+            'password' => $request['password'],
             'tgl_lahir' => $request['tgl_lahir'],
             'foto_profile' => $file,
             'nik' => $request['nik'],

@@ -33,6 +33,10 @@
                                 <label for="nik" class="form-label">NIK:</label>
                                 <input type="number" name="nik" id="nik" class="form-control" required>
                             </div>
+                            <div class="col-md-4">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="text" name="password" id="password" class="form-control" required>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <div class="d-grid gap-2">

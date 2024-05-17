@@ -50,8 +50,10 @@ Route::get('/admin', [berandaController::class, 'index'])->name('admin');
 Route::get('/admin/armada', [armadaController::class, 'index'])->name('admin.armada');
 Route::post('/admin/armada/posts', [armadaController::class, 'store'])->name('post.armada');
 Route::get('/admin/armada/{id}/detail', [armadaController::class, 'show'])->name('detail.armada');
-Route::get('/admin/armada/{id}/edit', [armadaController::class, 'edit'])->name('edit.armada');
-Route::put('/admin/armada/{id}', [armadaController::class, 'update'])->name('update.armada');
+Route::get('/admin/armada/{id}/editProfilArmada', [armadaController::class, 'editProfilArmada'])->name('edit.armada');
+Route::get('/admin/armada/{id}/editTrayekArmada', [armadaController::class, 'editTrayekArmada'])->name('edit.trayekarmada');
+Route::put('/admin/armada/{id}/profil', [armadaController::class, 'updateProfilArmada'])->name('update.armada');
+Route::put('/admin/armada/{id}/trayek', [armadaController::class, 'updateTrayekArmada'])->name('update.trayekarmada');
 Route::delete('/admin/armada/delete/{id}', [armadaController::class, 'destroy'])->name('destroy.armada');
 
 // helper

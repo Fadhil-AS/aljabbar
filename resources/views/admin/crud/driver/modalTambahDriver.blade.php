@@ -37,6 +37,10 @@
                                 <label for="nomor_sim" class="form-label">Nomor Sim:</label>
                                 <input type="text" name="nomor_sim" id="nomor_sim" class="form-control" required>
                             </div>
+                            <div class="col-md-4">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <div class="d-grid gap-2">

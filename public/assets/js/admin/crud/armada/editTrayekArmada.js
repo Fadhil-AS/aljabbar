@@ -89,18 +89,14 @@ var previousData = {
     tanggal_keberangkatan: "{{ $dataArm->tanggal_keberangkatan }}",
 };
 
-function editArmada() {
+function editTrayekArmada() {
     event.preventDefault();
     var currentData = {
-        plat_depan: document.getElementById('plat_depan').value,
-        nomor_plat: document.getElementById('nomor_plat').value,
-        plat_belakang: document.getElementById('plat_belakang').value,
-        nomor_body: document.getElementById('nomor_body').value,
-        foto_armada: document.getElementById('foto_armada').value,
-        kapasitas_kursi: document.getElementById('kapasitas_kursi').value,
-        julukan : document.getElementById('julukan').value,
-        jarak_tempuh: document.getElementById('jarak_tempuh').value,
-        tgl_kir: document.getElementById('tgl_kir').value,
+        tempat_awal: document.getElementById('tempat_awal').value,
+        tempat_akhir: document.getElementById('tempat_akhir').value,
+        jam_keberangkatan : document.getElementById('jam_keberangkatan').value,
+        tanggal_keberangkatan: document.getElementById('tanggal_keberangkatan').value,
+        penumpang: document.getElementById('penumpang').value,
     };
     // periksa apakah semua field required telah diisi
     if (isFormValid()) {

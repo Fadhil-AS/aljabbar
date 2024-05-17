@@ -69,6 +69,7 @@ class armadaController extends Controller
             'tempat_akhir' => $request->input('tempat_akhir'),
             'jam_keberangkatan' => $request->input('jam_keberangkatan'),
             'tanggal_keberangkatan' => $request->input('tanggal_keberangkatan'),
+            'penumpang' => $request->input('penumpang'),    
             'id_driver' => $request->input('id_driver'),
             'id_helper' => $request->input('id_helper')
         ]);
@@ -108,7 +109,7 @@ class armadaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function editProfilArmada(string $id)
     {
         // Memuat data armada berserta data terkait dari tbdriver dan tbhelper
         $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id);
@@ -119,13 +120,27 @@ class armadaController extends Controller
             abort(404);
         }
 
-        return view('admin.crud.armada.editArmada', ['dataArm' => $dataArm, 'dataDrv' => $dataDrv, 'dataHlp' => $dataHlp]);
+        return view('admin.crud.armada.editProfilArmada', ['dataArm' => $dataArm, 'dataDrv' => $dataDrv, 'dataHlp' => $dataHlp]);
+    }
+
+    public function editTrayekArmada(string $id)
+    {
+        // Memuat data armada berserta data terkait dari tbdriver dan tbhelper
+        $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id);
+        $dataDrv = driverModel::all(); // Ambil semua data driver
+        $dataHlp = helperModel::all(); // Ambil semua data helper
+
+        if (!$dataArm) {
+            abort(404);
+        }
+
+        return view('admin.crud.armada.editTrayekArmada', ['dataArm' => $dataArm, 'dataDrv' => $dataDrv, 'dataHlp' => $dataHlp]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id_armada)
+    public function updateProfilArmada(Request $request, string $id_armada)
     {
         $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id_armada);
         $request->validate([
@@ -155,13 +170,24 @@ class armadaController extends Controller
             'jarak_tempuh' => $request->input('jarak_tempuh'),
             'kapasitas_kursi' => $request->input('kapasitas_kursi'),
             'nomor_body' => $request->input('nomor_body'),
+            'id_driver' => $request->input('id_driver'),
+            'id_helper' => $request->input('id_helper')
+        ]);
+        return redirect()->route('admin.armada');
+    }
+
+    public function updateTrayekArmada(Request $request, string $id_armada)
+    {
+        $dataArm = armadaModel::with(['driver', 'helper', 'keuangan'])->find($id_armada);
+
+        $file = request()->file('foto_armada') ? request()->file('foto_armada')->store('post-image', 'public') : null;
+        armadaModel::where('id_armada', $dataArm->id_armada)->update([
             'status' => $request->input('status'),
             'tempat_awal' => $request->input('tempat_awal'),
             'tempat_akhir' => $request->input('tempat_akhir'),
             'jam_keberangkatan' => $request->input('jam_keberangkatan'),
             'tanggal_keberangkatan' => $request->input('tanggal_keberangkatan'),
-            'id_driver' => $request->input('id_driver'),
-            'id_helper' => $request->input('id_helper')
+            'penumpang' => $request->input('penumpang'),
         ]);
         return redirect()->route('admin.armada');
     }

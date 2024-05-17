@@ -98,6 +98,13 @@
                             </div>
                         </div>
                         <div class="row pb-3">
+                            <div class="col-md-6">
+                                <label for="penumpang" class="form-label">Penumpang:</label>
+                                <input type="number" name="penumpang" id="penumpang" class="form-control" required>
+                            </div>
+
+                        </div>
+                        <div class="row pb-3">
                             <!-- Bagian Inputan Driver -->
                             <div class="col-md-6">
                                 <label for="id_driver" class="form-label">Driver :</label>

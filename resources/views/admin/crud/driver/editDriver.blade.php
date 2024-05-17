@@ -51,6 +51,10 @@
                                     <label for="nomor_sim" class="form-label">Nomor Sim:</label>
                                     <input type="text" name="nomor_sim" id="nomor_sim" class="form-control" value="{{$dataDrv->nomor_sim}}" required>
                                 </div>
+                                <div class="col-md-4">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="text" name="password" id="password" class="form-control" value="{{$dataDrv->password}}" required>
+                                </div>
                             </div>
                             <div class="row pb-3">
                                 <div class="col-md-12">

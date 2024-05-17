@@ -40,7 +40,7 @@
                             <i class="fa-regular fa-user ikon"></i><h4>{{ $dataHlp->nama_helper }}</h4>
                         </div>
                         <div>
-                            <a class="btn btn-success border border-0" href="/admin/armada/{{$dataArm->id_armada}}/edit" style="background-color: #47a992"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+                            <a class="btn btn-success border border-0" href="/admin/armada/{{$dataArm->id_armada}}/editProfilArmada" style="background-color: #47a992"><i class="fa-regular fa-pen-to-square"></i> Edit Profil Armada</a>
                         </div>
                     </div>
                 </div>
@@ -55,6 +55,7 @@
                 <div class="card-body ms-3 mb-3 me-3 mt-3">
                     <div class="card-title">
                         <h3>Keberangkatan</h3>
+                        <a class="btn btn-success border border-0" href="/admin/armada/{{$dataArm->id_armada}}/editTrayekArmada" style="background-color: #47a992"><i class="fa-regular fa-pen-to-square"></i> Edit Keberangkatan</a>
                     </div>
                     <div class="card-item mt-3 ms-4">
                         <div class="d-flex">
@@ -65,7 +66,7 @@
                             <h5 class="col-md-1">{{$dataArm->jam_keberangkatan}}</h5>
                             <h5 class="col-md-2">{{$dataArm->tanggal_keberangkatan}}</h5>
                         </div>
-                        <h5 class="mt-3">30 Penumpang</h5>
+                        <h5 class="mt-3">{{ $dataArm->penumpang }} Penumpang</h5>
                     </div>
                     <div class="card-title mt-3">
                         <h3>Live Location</h3>

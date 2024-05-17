@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id_driver');
             $table->string('nama_driver');
             $table->string('email')->unique();
+            $table->string('password');
             $table->date('tgl_lahir');
             $table->string('foto_profile');
             $table->bigInteger('nik');

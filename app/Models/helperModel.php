@@ -11,5 +11,5 @@ class helperModel extends Model
     use HasFactory;
     protected $table = 'tbhelper';
     protected $primaryKey = 'id_helper';
-    protected $fillable = ['nama_helper', 'email', 'foto_profile', 'tgl_lahir', 'nik'];
+    protected $fillable = ['nama_helper', 'email', 'password', 'foto_profile', 'tgl_lahir', 'nik'];
 }

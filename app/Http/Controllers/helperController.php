@@ -34,6 +34,7 @@ class helperController extends Controller
         $request->validate([
             'nama_helper' => 'required|string|max:255',
             'email' => 'required|email',
+            'password' => 'required',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
             'nik' => 'required',
@@ -44,6 +45,7 @@ class helperController extends Controller
         $helper = new helperModel([
             'nama_helper' => $request->input('nama_helper'),
             'email' => $request->input('email'),
+            'password' => $request->input('password'),
             'tgl_lahir' => $request->input('tgl_lahir'),
             'foto_profile' => $request->file('foto_profile')->store('post-image', 'public'),
             'nik' => $request->input('nik'),
@@ -88,6 +90,7 @@ class helperController extends Controller
         $request->validate([
             'nama_helper' => 'required|string|max:255',
             'email' => 'required|email',
+            'password' => 'required',
             'tgl_lahir' => 'required',
             'foto_profile' => 'required',
             'nik' => 'required',
@@ -97,6 +100,7 @@ class helperController extends Controller
         helperModel::where('id_helper', $dataHlp->id_helper)->update([
             'nama_helper' => $request['nama_helper'],
             'email' => $request['email'],
+            'password' => $request['password'],
             'tgl_lahir' => $request['tgl_lahir'],
             'foto_profile' => $file,
             'nik' => $request['nik'],

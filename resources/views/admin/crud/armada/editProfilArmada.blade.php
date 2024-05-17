@@ -76,7 +76,7 @@
                                     <input type="date" name="tgl_kir" id="tgl_kir" value="{{ $dataArm->tgl_kir }}" class="form-control" required>
                                 </div>
                             </div>
-                            <div class="row pb-3">
+                            {{-- <div class="row pb-3">
                                 <div class="col-md-4">
                                     <label for="status" class="form-label">Status :</label>
                                     <select name="status" id="status" class="form-control" required>
@@ -104,7 +104,7 @@
                                     <label for="tanggal_keberangkatan" class="form-label">Tanggal Keberangkatan:</label>
                                     <input type="date" name="tanggal_keberangkatan" id="tanggal_keberangkatan" value="{{ $dataArm->tanggal_keberangkatan }}" class="form-control" required>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="row pb-3">
                                 <!-- Bagian Inputan Driver -->
                                 <div class="col-md-6">

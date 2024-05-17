@@ -29,6 +29,7 @@ $(function (){
 var previousData = {
     nama_helper: "{{ $dataHlp->nama_helper }}",
     email: "{{ $dataHlp->email }}",
+    password: "{{ $dataHlp->password }}",
     tgl_lahir: "{{ $dataHlp->tgl_lahir }}",
     foto_profile: "{{ $dataHlp->foto_profile }}",
     nik: "{{ $dataHlp->nik }}",
@@ -39,6 +40,7 @@ function editHelper() {
     var currentData = {
         nama_helper: document.getElementById('nama_helper').value,
         email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
         tgl_lahir: document.getElementById('tgl_lahir').value,
         foto_profile: document.getElementById('foto_profile').value,
         nik: document.getElementById('nik').value,

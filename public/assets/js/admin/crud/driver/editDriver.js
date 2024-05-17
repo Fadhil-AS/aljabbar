@@ -35,6 +35,7 @@ $(function (){
 var previousData = {
     nama_driver: "{{ $dataDrv->nama_driver }}",
     email: "{{ $dataDrv->email }}",
+    password: "{{ $dataDrv->password }}",
     tgl_lahir: "{{ $dataDrv->tgl_lahir }}",
     foto_profile: "{{ $dataDrv->foto_profile }}",
     nik: "{{ $dataDrv->nik }}",
@@ -46,6 +47,7 @@ function editDriver() {
     var currentData = {
         nama_driver: document.getElementById('nama_driver').value,
         email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
         tgl_lahir: document.getElementById('tgl_lahir').value,
         foto_profile: document.getElementById('foto_profile').value,
         nik: document.getElementById('nik').value,
