@@ -41,13 +41,22 @@ class helperController extends Controller
         ]);
 
         // $fotopath = $request->input('foto_profile');
+        if ($request->hasFile('foto_profile')) {
+            $file = $request->file('foto_profile');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/helper');
+            $file->move($destinationPath, $filename);
+            $fotoHelperPath = 'assets/helper/' . $filename;
+        } else {
+            $fotoHelperPath = null; // atau handle error sesuai kebutuhan Anda
+        }
 
         $helper = new helperModel([
             'nama_helper' => $request->input('nama_helper'),
             'email' => $request->input('email'),
             'password' => $request->input('password'),
             'tgl_lahir' => $request->input('tgl_lahir'),
-            'foto_profile' => $request->file('foto_profile')->store('post-image', 'public'),
+            'foto_profile' => $fotoHelperPath,
             'nik' => $request->input('nik'),
         ]);
 
@@ -96,13 +105,23 @@ class helperController extends Controller
             'nik' => 'required',
         ]);
 
-        $file = request()->file('foto_profile') ? request()->file('foto_profile')->store('post-image', 'public') : null;
+        if ($request->hasFile('foto_profile')) {
+            $file = $request->file('foto_profile');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/helper');
+            $file->move($destinationPath, $filename);
+            $fotoHelperPath = 'assets/helper/' . $filename;
+        } else {
+            $fotoHelperPath = null; // atau handle error sesuai kebutuhan Anda
+        }
+
+        // $file = request()->file('foto_profile') ? request()->file('foto_profile')->store('post-image', 'public') : null;
         helperModel::where('id_helper', $dataHlp->id_helper)->update([
             'nama_helper' => $request['nama_helper'],
             'email' => $request['email'],
             'password' => $request['password'],
             'tgl_lahir' => $request['tgl_lahir'],
-            'foto_profile' => $file,
+            'foto_profile' => $fotoHelperPath,
             'nik' => $request['nik'],
         ]);
         return redirect()->route('admin.helper');
@@ -115,7 +134,7 @@ class helperController extends Controller
     {
         $dataHlp = helperModel::where('id_helper' ,$id_helper)->first();
         $image_name = $dataHlp->foto_profile;
-        $image_path = \public_path('storage/' . $dataHlp->foto_profile);
+        $image_path = \public_path($dataHlp->foto_profile);
         if(File::exists($image_path)){
             unlink($image_path);
         }

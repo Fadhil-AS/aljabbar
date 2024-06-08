@@ -52,6 +52,15 @@ class armadaController extends Controller
         ]);
 
         // $fotopath = $request->input('foto_profile');
+        if ($request->hasFile('foto_armada')) {
+            $file = $request->file('foto_armada');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/armada');
+            $file->move($destinationPath, $filename);
+            $fotoArmadaPath = 'assets/armada/' . $filename;
+        } else {
+            $fotoArmadaPath = null; // atau handle error sesuai kebutuhan Anda
+        }
 
         $armada = new armadaModel([
             'plat_depan' => $request->input('plat_depan'),
@@ -60,7 +69,7 @@ class armadaController extends Controller
             'tgl_kir' => $request->input('tgl_kir'),
             'julukan' => $request->input('julukan'),
             'kelas' => $request->input('kelas'),
-            'foto_armada' => $request->file('foto_armada')->store('post-image', 'public'),
+            'foto_armada' => $fotoArmadaPath,
             'jarak_tempuh' => $request->input('jarak_tempuh'),
             'kapasitas_kursi' => $request->input('kapasitas_kursi'),
             'nomor_body' => $request->input('nomor_body'),
@@ -69,7 +78,7 @@ class armadaController extends Controller
             'tempat_akhir' => $request->input('tempat_akhir'),
             'jam_keberangkatan' => $request->input('jam_keberangkatan'),
             'tanggal_keberangkatan' => $request->input('tanggal_keberangkatan'),
-            'penumpang' => $request->input('penumpang'),    
+            'penumpang' => $request->input('penumpang'),
             'id_driver' => $request->input('id_driver'),
             'id_helper' => $request->input('id_helper')
         ]);
@@ -158,7 +167,17 @@ class armadaController extends Controller
             'id_helper' => 'required'
         ]);
 
-        $file = request()->file('foto_armada') ? request()->file('foto_armada')->store('post-image', 'public') : null;
+        if ($request->hasFile('foto_armada')) {
+            $file = $request->file('foto_armada');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/armada');
+            $file->move($destinationPath, $filename);
+            $fotoArmadaPath = 'assets/armada/' . $filename;
+        } else {
+            $fotoArmadaPath = null; // atau handle error sesuai kebutuhan Anda
+        }
+
+        // $file = request()->file('foto_armada') ? request()->file('foto_armada')->store('post-image', 'public') : null;
         armadaModel::where('id_armada', $dataArm->id_armada)->update([
             'plat_depan' => $request->input('plat_depan'),
             'nomor_plat' => $request->input('nomor_plat'),
@@ -166,7 +185,7 @@ class armadaController extends Controller
             'tgl_kir' => $request->input('tgl_kir'),
             'julukan' => $request->input('julukan'),
             'kelas' => $request->input('kelas'),
-            'foto_armada' => $request->file('foto_armada')->store('post-image', 'public'),
+            'foto_armada' => $fotoArmadaPath,
             'jarak_tempuh' => $request->input('jarak_tempuh'),
             'kapasitas_kursi' => $request->input('kapasitas_kursi'),
             'nomor_body' => $request->input('nomor_body'),
@@ -199,7 +218,7 @@ class armadaController extends Controller
     {
         $dataArm = armadaModel::with(['driver', 'helper'])->where('id_armada', $id)->first();
         $image_name = $dataArm->foto_armada;
-        $image_path = \public_path('storage/' . $dataArm->foto_armada);
+        $image_path = \public_path($dataArm->foto_armada);
         if(File::exists($image_path)){
             unlink($image_path);
         }

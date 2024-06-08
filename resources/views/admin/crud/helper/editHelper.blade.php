@@ -42,7 +42,7 @@
                                 <div class="col-md-8">
                                     <label for="foto_profile" class="form-label">Foto profile:</label>
                                     <input type="file" name="foto_profile" id="foto_profile" class="form-control" required>
-                                    <img src="{{asset('storage/'. $dataHlp->foto_profile)}}" alt="" style="width: 250px; height:250px;">
+                                    <img src="{{asset($dataHlp->foto_profile)}}" alt="" style="width: 250px; height:250px;">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="nik" class="form-label">NIK</label>

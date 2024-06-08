@@ -42,13 +42,22 @@ class driverController extends Controller
         ]);
 
         // $fotopath = $request->input('foto_profile');
+        if ($request->hasFile('foto_profile')) {
+            $file = $request->file('foto_profile');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/driver');
+            $file->move($destinationPath, $filename);
+            $fotoDriverPath = 'assets/driver/' . $filename;
+        } else {
+            $fotoDriverPath = null; // atau handle error sesuai kebutuhan Anda
+        }
 
         $driver = new driverModel([
             'nama_driver' => $request->input('nama_driver'),
             'email' => $request->input('email'),
             'password' => $request->input('password'),
             'tgl_lahir' => $request->input('tgl_lahir'),
-            'foto_profile' => $request->file('foto_profile')->store('post-image', 'public'),
+            'foto_profile' => $fotoDriverPath,
             'nik' => $request->input('nik'),
             'nomor_sim' => $request->input('nomor_sim'),
         ]);
@@ -99,13 +108,23 @@ class driverController extends Controller
             'nomor_sim' => 'required'
         ]);
 
-        $file = request()->file('foto_profile') ? request()->file('foto_profile')->store('post-image', 'public') : null;
+        if ($request->hasFile('foto_profile')) {
+            $file = $request->file('foto_profile');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/driver');
+            $file->move($destinationPath, $filename);
+            $fotoDriverPath = 'assets/driver/' . $filename;
+        } else {
+            $fotoDriverPath = null; // atau handle error sesuai kebutuhan Anda
+        }
+
+        // $file = request()->file('foto_profile') ? request()->file('foto_profile')->store('post-image', 'public') : null;
         driverModel::where('id_driver', $dataDrv->id_driver)->update([
             'nama_driver' => $request['nama_driver'],
             'email' => $request['email'],
             'password' => $request['password'],
             'tgl_lahir' => $request['tgl_lahir'],
-            'foto_profile' => $file,
+            'foto_profile' => $fotoDriverPath,
             'nik' => $request['nik'],
             'nomor_sim' => $request->input('nomor_sim'),
         ]);
@@ -119,7 +138,7 @@ class driverController extends Controller
     {
         $dataDrv = driverModel::where('id_driver' ,$id_driver)->first();
         $image_name = $dataDrv->foto_profile;
-        $image_path = \public_path('storage/' . $dataDrv->foto_profile);
+        $image_path = \public_path($dataDrv->foto_profile);
         if(File::exists($image_path)){
             unlink($image_path);
         }

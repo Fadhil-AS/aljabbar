@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\bergabungModel;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class bergabungController extends Controller
 {
@@ -45,13 +46,23 @@ class bergabungController extends Controller
             'alamat' => 'required|string|max:255',
         ]);
 
+        if ($request->hasFile('foto_profil')) {
+            $file = $request->file('foto_profil');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/assets/users');
+            $file->move($destinationPath, $filename);
+            $fotoProfilPath = 'assets/users/' . $filename;
+        } else {
+            $fotoProfilPath = null; // atau handle error sesuai kebutuhan Anda
+        }
+
         $bergabung = new bergabungModel([
             'nama_lengkap' => $request->input('nama_lengkap'),
             'email' => $request->input('email'),
             'password' => bcrypt($request->input('password')),
             'nama_pt' => $request->input('nama_pt'),
             'nama_po' => $request->input('nama_po'),
-            'foto_profil' => $request->file('foto_profil')->store('post-image', 'public'),
+            'foto_profil' => $fotoProfilPath,
             'jabatan_pekerjaan' => $request->input('jabatan_pekerjaan'),
             'telepon' => $request->input('telepon'),
             'jumlah_kendaraan' => $request->input('jumlah_kendaraan'),
